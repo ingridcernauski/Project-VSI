@@ -1,0 +1,369 @@
+
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.contact {
+  position: relative;
+
+  min-height: calc(100vh - 90px);
+
+  padding: 110px 40px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TRANSIÇÃO
+   ========================================================= */
+
+.contact::before {
+  content: "";
+
+  display: block;
+
+  width: 46px;
+  height: 1px;
+
+  margin: 0 auto 32px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #a978ea 35%,
+    #e9d9ff 50%,
+    #a978ea 65%,
+    transparent
+  );
+
+  box-shadow:
+    0 0 7px rgba(161, 92, 255, 0.45);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.contactHeader {
+  width: 100%;
+  max-width: 480px;
+
+  margin: 0;
+
+  text-align: left;
+}
+
+
+.sectionLabel {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 60px;
+
+  text-align: center;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: .34em;
+
+  color: #b98aff;
+}
+
+.contactHeader h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(42px, 5vw, 60px);
+
+  font-weight: 500;
+
+  line-height: 1.02;
+
+  color: #f5f1fa;
+}
+
+.contactHeader h1 em {
+  color: #c5a0ff;
+
+  font-style: italic;
+}
+
+.contactHeader p {
+  max-width: 420px;
+
+  margin: 24px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.8;
+
+  color: #aaa7b2;
+}
+
+/* =========================================================
+CONTATOS
+========================================================= */
+
+.contactGrid {
+  width: 100%;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 70px;
+}
+
+.contactContent {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 10px;
+
+  border: none;
+
+  background: transparent;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  transition: transform .3s ease;
+}
+
+
+
+.contactItem svg {
+  width: 80px;
+  height: 80px;
+
+  flex-shrink: 0;
+
+  stroke: url(#iconGradient);
+
+  filter:
+    drop-shadow(0 0 4px rgba(201, 168, 255, 0.28))
+    drop-shadow(0 0 8px rgba(143, 99, 255, 0.14));
+
+  transition:
+    filter .3s ease,
+    transform .3s ease;
+}
+
+.contactItem:hover {
+  padding-left: 18px;
+
+  border-color: rgba(201, 168, 255, 0.28);
+}
+
+.contactItem:hover svg {
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 10px rgba(143, 99, 255, 0.30));
+}
+
+.contactLabel {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: .25em;
+
+  color: #b98aff;
+}
+
+.contactValue {
+  display: block;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 50px;
+  font-weight: 500;
+
+  color: #f5f1fa;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  width: 100%;
+
+  margin-top: auto;
+  padding-top: 40px;
+
+  position: relative;
+  top: 40px;
+
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(201, 168, 255, 0.08);
+}
+
+
+.footer p,
+.footer span {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: .08em;
+
+  color: #77737f;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .contact {
+    padding: 90px 25px 30px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .contactItem {
+    min-height: 100px;
+  }
+
+  .footer {
+    flex-direction: column;
+
+    gap: 12px;
+
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   FUNDO — GLOW + MALHA
+   ========================================================= */
+
+.contact {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* GLOW ROXO */
+
+.contact::after {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  top: 25%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(143, 99, 255, 0.10) 0%,
+    rgba(143, 99, 255, 0.045) 35%,
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+
+/* MALHA */
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(201, 168, 255, 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(201, 168, 255, 0.09) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+}

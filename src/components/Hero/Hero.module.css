@@ -1,0 +1,259 @@
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:100vh;
+
+    background:#07070B;
+
+    color:#FFF;
+
+    padding:92px 80px 0;
+}
+
+/* ========================= */
+/* IMAGEM DE FUNDO           */
+/* ========================= */
+
+.backgroundGraph{
+
+    position:absolute;
+
+    top:-90px;
+
+    right:-180px;
+
+    width:1250px;
+
+    opacity:.82;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    transition:transform .6s ease;
+}
+
+.hero:hover .backgroundGraph{
+
+    transform:scale(1.02);
+}
+
+/* ========================= */
+/* CONTEÚDO                  */
+/* ========================= */
+
+.content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1440px;
+
+    margin:0 auto;
+
+    min-height:calc(100vh - 92px);
+
+    display:flex;
+
+    align-items:flex-start;
+}
+
+/* ========================= */
+/* ESQUERDA                  */
+/* ========================= */
+
+.left{
+
+    width:560px;
+
+    margin-top:80px;
+    
+}
+
+/* ========================= */
+/* TÍTULO                    */
+/* ========================= */
+
+.title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin:0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:96px;
+
+    font-weight:300;
+
+    line-height:.86;
+
+    letter-spacing:-1.5px;
+}
+
+.title span{
+
+    color:#F2F2F4;
+
+    font-weight:300;
+}
+
+.title .highlight{
+
+    color:#D2AEFF;
+
+    font-style:italic;
+
+    font-weight:300;
+
+    text-shadow:
+        0 0 10px rgba(210,174,255,.35),
+        0 0 24px rgba(143,99,255,.22);
+}
+
+/* ========================= */
+
+.line{
+
+    width:72px;
+
+    height:1px;
+
+    background:#C9A8FF;
+
+    margin:34px 0;
+}
+
+/* ========================= */
+
+.subtitle{
+
+    margin:0;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:17px;
+
+    font-weight:300;
+
+    color:#ECECEC;
+
+    line-height:1.5;
+}
+
+/* ========================= */
+
+.description{
+
+    margin-top:26px;
+
+    max-width:540px;
+
+    color:#9C9CA4;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:16px;
+
+    font-weight:300;
+
+    line-height:1.8;
+}
+
+/* ========================= */
+.cta {
+  margin-top: 34px;
+
+  width: 250px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  border: 1px solid #b98aff;
+
+  background: transparent;
+
+  color: white;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: .16em;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: .35s;
+}
+
+.cta:hover{
+
+    background:#8F63FF;
+
+    box-shadow:0 0 30px rgba(143,99,255,.22);
+}
+
+/* ========================= */
+/* FADE DA IMAGEM            */
+/* ========================= */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #07070B 0%,
+            rgba(7,7,11,.98) 18%,
+            rgba(7,7,11,.80) 30%,
+            rgba(7,7,11,.35) 46%,
+    transparent 62%
+        );
+
+    pointer-events:none;
+}
+
+/* Glow roxo */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 82% 38%,
+            rgba(201,168,255,.12),
+            transparent 45%
+        );
+
+    pointer-events:none;
+
+    z-index:1;
+}

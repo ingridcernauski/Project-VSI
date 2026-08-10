@@ -1,0 +1,161 @@
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:92px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 56px;
+
+    background:#07070B;
+
+    border-bottom:1px solid rgba(177,140,255,.08);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+
+    z-index:999;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+    width: 320px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---------- MENU ---------- */
+
+.menu{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    transform:translateX(110px);
+
+    gap: 54px;
+}
+
+.menu a{
+    color:#F5F5F5;
+
+    text-decoration:none;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:13px;
+
+    font-weight:300;
+
+    letter-spacing:.18em;
+
+    
+
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#8F63FF;
+}
+
+/* ---------- BOTÃO ---------- */
+
+.button {
+  margin-left: auto;
+
+  width: 180px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(143, 99, 255, .35);
+
+  background: transparent;
+
+  color: white;
+
+  font-family: "Manrope", sans-serif;
+
+   font-size: 13px;
+
+  letter-spacing: .15em;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: .3s;
+}
+
+.button:hover {
+  background: #8F63FF;
+
+  border-color: #8F63FF;
+
+  color: white;
+}
+
+.buttonActive {
+  background: #8F63FF;
+
+  border-color: #8F63FF;
+
+  color: white;
+
+  box-shadow:
+    0 0 12px rgba(143, 99, 255, .25),
+    0 0 24px rgba(143, 99, 255, .12);
+}
+
+.menu a {
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -10px;
+
+    width: 0;
+    height: 1px;
+
+    background: #C9A8FF;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+    0 0 4px rgba(201,168,255,.55),
+    0 0 9px rgba(201,168,255,.35),
+    0 0 16px rgba(143,99,255,.18);
+
+    transition: width .3s ease;
+}
+
+.menu a.active::after {
+    width: 28px;
+}

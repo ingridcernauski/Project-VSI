@@ -1,0 +1,192 @@
+.about{
+
+    background:#07070B;
+
+    padding:100px 80px 30px;
+
+}
+
+.container{
+
+    max-width:1440px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 520px;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:45px 60px;
+    border:1px solid rgba(201,168,255,.08);
+
+    border-radius:34px;
+
+    background:#0A0A10;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.02),
+        0 0 0 1px rgba(255,255,255,.015);
+}
+
+/* ========================= */
+/* ESQUERDA                  */
+/* ========================= */
+
+.left{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.label{
+
+    color:#b98aff;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:.45em;
+
+    text-transform:uppercase;
+}
+
+.line{
+
+    width:72px;
+
+    height:1px;
+
+    background:#C9A8FF;
+
+    margin:20px 0 24px;
+}
+
+.title{
+
+    margin:0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    font-weight:300;
+
+    line-height:1.05;
+
+    letter-spacing:-1px;
+
+    color:#F5F5F5;
+}
+
+.text{
+
+    margin-top:28px;
+
+    color:#A9A9B2;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:15px;
+
+    font-weight:300;
+
+    line-height:1.2;
+}
+
+.text strong{
+
+    color:#C9A8FF;
+
+    font-weight:500;
+}
+
+/* ========================= */
+/* BOTÃO                     */
+/* ========================= */
+
+.button {
+  margin-top: 40px;
+
+  width: 260px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #b98aff;
+
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: #F5F5F5;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: .15em;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: .35s;
+}
+
+.button:hover{
+
+    background:#8F63FF;
+
+    box-shadow:0 0 30px rgba(143,99,255,.25);
+}
+
+/* ========================= */
+/* DIREITA                   */
+/* ========================= */
+
+.right{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:flex-start;
+
+    padding-top:20px;
+}
+
+.photo{
+
+    width:105%;
+
+    max-width:540px;
+
+    border-radius:30px;
+
+    display:block;
+
+    object-fit:cover;
+
+    filter:grayscale(100%) contrast(1.12);
+
+    transition:.4s;
+}
+
+.photo:hover{
+
+    transform:scale(1.02);
+
+    filter:grayscale(0%) contrast(1.08);
+}
