@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/home/home";
 import Metodologia from "./pages/metodologia/Metodologia";
@@ -41,6 +41,9 @@ function App() {
         />
 
       </Routes>
+
+            <Analytics />
+
 
     </BrowserRouter>
   );
