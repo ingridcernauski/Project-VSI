@@ -51,11 +51,11 @@
   flex: 1;
 
   display: flex;
-  justify-content: center;
+justify-content: space-evenly;
 
-  transform: translateX(110px);
+  transform: translateX(60px);
 
-  gap: 54px;
+  gap: 0px;
 }
 
 .menu a {
@@ -165,7 +165,8 @@ IDIOMA — PT | EN
    ========================================================= */
 
 .button {
-  margin-left: auto;
+  margin-left: 32px;
+    margin-right: 22px;
 
   width: 180px;
   height: 48px;
@@ -313,13 +314,19 @@ IDIOMA — PT | EN
   }
 .languageSwitch {
   display: flex;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: 10px;
   gap: 7px;
 }
 
-.languageSwitch button {
-  font-size: 10px;
+.cvDownload {
+  width: 36px;
+  height: 36px;
+
+  margin-left: auto;
+  margin-right: 10px;
+
+  flex-shrink: 0;
 }
 
   /* ---------- HAMBURGER ---------- */
@@ -451,4 +458,29 @@ IDIOMA — PT | EN
   .mobileMenu a.active {
     color: #C9A8FF;
   }
+}
+
+.cvDownload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  
+  color: inherit;
+  text-decoration: none;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.cvDownload:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.08);
 }

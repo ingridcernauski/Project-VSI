@@ -2,7 +2,9 @@
 import styles from "./Contato.module.css";
 
 import {
-  Mail
+  Mail,
+  Download
+
 } from "lucide-react";
 
 import { useLanguage } from "../../context/LanguageContext";
@@ -164,6 +166,25 @@ function Contato() {
             </div>
           </a>
 
+
+
+          {/* CURRÍCULO */}
+
+          <a
+            href="/Ingrid_Cernauski_Curriculo.pdf"
+            download
+            className={styles.contactItem}
+          >
+            <Download />
+
+            <div>
+              <span className={styles.contactLabel}>
+                {language === "pt"
+                  ? "BAIXAR CURRÍCULO"
+                  : "DOWNLOAD CV"}
+              </span>
+            </div>
+          </a>
         </div>
 
       </div>

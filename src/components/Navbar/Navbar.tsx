@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import { Download } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 
@@ -77,6 +78,25 @@ export default function Navbar() {
           ? "Vamos Conversar →"
           : "Let's Talk →"}
       </NavLink>
+
+
+      <a
+  href="/Ingrid_Cernauski_Curriculo.pdf"
+  download
+  className={styles.cvDownload}
+  aria-label={
+    language === "pt"
+      ? "Baixar currículo"
+      : "Download CV"
+  }
+  title={
+    language === "pt"
+      ? "Baixar currículo"
+      : "Download CV"
+  }
+>
+  <Download size={19} strokeWidth={1.8} />
+</a>
 
 
       <div className={styles.languageSwitch}>
