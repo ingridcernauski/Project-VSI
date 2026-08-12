@@ -271,25 +271,70 @@ CONTATOS
 @media (max-width: 800px) {
 
   .contact {
-    padding: 90px 25px 30px;
+    padding: 80px 25px 10px;
+    min-height: auto;
+  }
+
+  .contactContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    margin-top: 25px;
+  }
+
+  .contactHeader {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .contactHeader h1 {
+    font-size: 42px;
+    line-height: 1.05;
+  }
+
+  .contactHeader p {
+    max-width: 360px;
+    margin: 20px auto 0;
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .contactGrid {
-    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 0;
 
-    margin-top: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 35px;
   }
 
   .contactItem {
-    min-height: 100px;
+    min-height: auto;
+    padding: 10px 8px;
+  }
+
+  .contactItem svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .contactLabel {
+    font-size: 9px;
+    letter-spacing: .18em;
   }
 
   .footer {
     flex-direction: column;
-
     gap: 12px;
-
     text-align: center;
+
+    top: 0;
+    margin-top: 70px;
+    padding-top: 25px;
   }
 
 }

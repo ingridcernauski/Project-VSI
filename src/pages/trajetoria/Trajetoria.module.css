@@ -1689,3 +1689,530 @@ body::before {
         text-transform:uppercase;
 
     }
+
+    /* =========================================================
+   MOBILE — TRAJETÓRIA
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =========================
+     JORNADA
+     ========================= */
+
+  .journey {
+    min-height: auto;
+    padding-top: 45px;
+    overflow: hidden;
+  }
+
+  .journeyHeader {
+    padding: 0 20px;
+  }
+
+  .journeyHeader span {
+    font-size: 9px;
+    letter-spacing: 0.30em;
+    margin-bottom: 16px;
+  }
+
+  .journeyHeader h2 {
+    font-size: 34px;
+  }
+
+
+  /* =========================
+     CURVA
+     ========================= */
+
+  .curve {
+    left: -45%;
+    right: -45%;
+    bottom: 420px;
+    height: 220px;
+  }
+
+  .flare {
+    width: 120px;
+  }
+
+
+  /* =========================
+     TIMELINE
+     ========================= */
+
+  .timeline {
+    width: auto;
+    max-width: none;
+
+    margin: 80px 24px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 42px;
+
+    align-items: stretch;
+  }
+
+  .timelineLine {
+    top: 30px;
+    bottom: 30px;
+
+    left: 29px;
+    right: auto;
+
+    width: 1px;
+    height: auto;
+  }
+
+  .timelineItem {
+    width: auto;
+    flex: none;
+
+    min-height: 72px;
+
+    padding-left: 78px;
+
+    text-align: left;
+
+    box-sizing: border-box;
+  }
+
+  .timelineIcon {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 58px;
+    height: 58px;
+
+    margin: 0;
+  }
+
+  .timelineYear {
+    margin-top: 0;
+
+    font-size: 11px;
+    letter-spacing: 0.22em;
+  }
+
+  .timelineYear::after {
+    margin: 6px 0 0;
+  }
+
+  .timelineItem h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .timelineItem p {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.45;
+    max-width: 230px;
+  }
+
+
+  /* =========================
+     FORMAÇÃO + IDIOMAS
+     ========================= */
+
+  .educationSection {
+    width: auto;
+
+    margin: 0 24px;
+
+    padding: 45px 0 70px;
+  }
+
+  .educationSection::before {
+    margin-bottom: 22px;
+  }
+
+  .educationHeader {
+    padding: 0;
+  }
+
+  .educationHeader h2 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .educationHeader p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .educationContent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 45px;
+
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .educationColumnHeader {
+    margin-bottom: 22px;
+  }
+
+  .educationColumnHeader h3 {
+    font-size: 10px;
+  }
+
+  .educationItem {
+    padding-bottom: 20px;
+  }
+
+  .educationItem + .educationItem {
+    padding-top: 20px;
+  }
+
+  .educationItem h4 {
+    font-size: 20px;
+  }
+
+  .educationItem p {
+    font-size: 11px;
+  }
+
+  .languageList {
+    gap: 14px;
+  }
+
+  .languageItem {
+    padding-bottom: 10px;
+  }
+
+  .languageName {
+    font-size: 19px;
+  }
+
+  .languageLevel {
+    font-size: 9px;
+  }
+
+
+  /* =========================
+     CURRÍCULO
+     ========================= */
+
+  .curriculumSection {
+    padding: 0 24px 40px;
+  }
+
+  .curriculumSection::before {
+    margin-bottom: 22px;
+  }
+
+  .curriculumHeader {
+    width: 100%;
+  }
+
+  .sectionLabel {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    margin-bottom: 16px;
+  }
+
+  .curriculumHeader h2 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .curriculumHeader p {
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+
+  /* =========================
+     EXPERIÊNCIA
+     ========================= */
+
+  .experience {
+    width: 100%;
+
+    margin: 45px 0 0;
+
+    padding-left: 62px;
+    padding-right: 5px;
+    padding-bottom: 60px;
+
+    box-sizing: border-box;
+  }
+
+  .experienceLine {
+    left: 25px;
+
+    top: 35px;
+    bottom: 25px;
+  }
+
+  .experiencePeriod,
+  .experiencePeriodSecond,
+  .experiencePeriodThird {
+    left: 0;
+
+    width: 52px;
+
+    align-items: center;
+  }
+
+  .experiencePeriod {
+    top: 0;
+  }
+
+  /*
+     IMPORTANTE:
+     No mobile não usamos os tops fixos do desktop.
+  */
+
+  .experiencePeriodSecond {
+position: absolute;
+top: 532px;
+left: 0;
+width: 52px;
+}
+
+  .experiencePeriodThird {
+position: absolute;
+top: 1130px;
+left: 0;
+width: 52px;
+}
+
+  .experiencePeriod span,
+  .experiencePeriodSecond span,
+  .experiencePeriodThird span {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+
+    white-space: nowrap;
+  }
+
+  .experienceDotStart {
+    display: none;
+  }
+
+  .experienceDot {
+    width: 5px;
+    height: 5px;
+
+    margin-top: 9px;
+  }
+
+
+  /* =========================
+     CONTEÚDO DAS EXPERIÊNCIAS
+     ========================= */
+
+  .experienceContent,
+  .experienceContentSecond {
+    padding-left: 12px;
+  }
+
+  .experienceContent h3 {
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .experienceContent h4 {
+    margin-top: 6px;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    padding-bottom: 10px;
+  }
+
+  .experienceContent h4::after {
+    margin-top: 8px;
+  }
+
+  .experienceIntro {
+    margin-top: 15px;
+
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+
+  /* =========================
+     PROJETOS
+     ========================= */
+
+  .experienceProjects {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin-top: 20px;
+  }
+
+  .projectHighlight > span {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+  }
+
+  .projectHighlight h5 {
+    margin-bottom: 7px;
+
+    font-size: 18px;
+  }
+
+  .projectHighlight p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+
+  /* =========================
+     TAGS
+     ========================= */
+
+  .experienceTags {
+    gap: 7px;
+
+    margin-top: 20px;
+  }
+
+  .experienceTags span {
+    padding: 6px 10px;
+
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* =========================
+     ESPAÇAMENTO ENTRE EXPERIÊNCIAS
+     ========================= */
+
+  .experienceSpacer,
+  .experienceSpacer2 {
+    height: 25px;
+  }
+
+
+  /* =========================
+     HARD & SOFT SKILLS
+     ========================= */
+
+  .skillsSection {
+    width: auto;
+
+    margin: 0 24px;
+
+    padding-bottom: 70px;
+  }
+
+  .skillsTransition {
+    margin-bottom: 22px;
+  }
+
+  .skillsHeader {
+    width: 100%;
+  }
+
+  .skillsHeader > span {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+
+    margin-bottom: 16px;
+  }
+
+  .skillsHeader h2 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .skillsHeader p {
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .skillsContent {
+    gap: 18px;
+
+    margin-top: 40px;
+  }
+
+  .skillsBox {
+    padding: 24px 18px;
+  }
+
+  .skillsColumnHeader {
+    margin-bottom: 20px;
+  }
+
+  .skillsColumnHeader h3 {
+    font-size: 9px;
+  }
+
+  .hardSkillsList {
+    gap: 8px;
+  }
+
+  .hardSkillsList span {
+    padding: 9px 13px;
+
+    font-size: 11px;
+  }
+
+  .softSkillsList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .softSkill {
+    gap: 12px;
+
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .softSkill span {
+    font-size: 8px;
+  }
+
+  .softSkill p {
+    font-size: 17px;
+  }
+
+
+  /* =========================
+     FOOTER
+     ========================= */
+
+  .footerSection {
+    padding: 0 24px;
+  }
+
+  .footer {
+    padding: 18px 0 28px;
+  }
+
+  .footer p {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .footer span {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+  }
+
+}

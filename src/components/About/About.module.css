@@ -190,3 +190,30 @@
 
     filter:grayscale(0%) contrast(1.08);
 }
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 60px 20px 30px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 35px 24px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  .right {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .photo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}

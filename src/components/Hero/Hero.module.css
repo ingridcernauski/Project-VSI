@@ -257,3 +257,26 @@
 
     z-index:1;
 }
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding: 70px 20px 20px;
+  }
+
+  .content {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .title {
+    font-size: 58px;
+  }
+
+}

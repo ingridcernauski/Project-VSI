@@ -611,3 +611,64 @@
         text-transform:uppercase;
 
     }
+
+    @media (max-width: 768px) {
+
+        .bottom {
+  grid-template-columns: 1fr;
+  gap: 35px;
+}
+
+.expertiseTitle {
+  font-size: 42px;
+}
+
+.expertiseDescription {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+  .executive {
+    padding: 40px 20px 20px;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .metrics {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 0;
+}
+
+.metric {
+  min-height: auto;
+  padding: 10px 4px;
+  border-left: 1px solid rgba(184,137,255,.08);
+}
+
+.metric:first-child {
+  border-left: none;
+}
+.cards {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 6px);
+}
+    }

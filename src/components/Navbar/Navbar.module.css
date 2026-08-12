@@ -1,80 +1,115 @@
-.navbar{
+.navbar {
+  position: fixed;
 
-    position:fixed;
+  top: 0;
+  left: 0;
 
-    top:0;
-    left:0;
+  width: 100%;
+  height: 92px;
 
-    width:100%;
-    height:92px;
+  display: flex;
 
-    display:flex;
+  align-items: center;
+  justify-content: space-between;
 
-    align-items:center;
+  padding: 0 56px;
 
-    justify-content:space-between;
+  background: #07070B;
 
-    padding:0 56px;
+  border-bottom: 1px solid rgba(177, 140, 255, 0.08);
 
-    background:#07070B;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 
-    border-bottom:1px solid rgba(177,140,255,.08);
-
-    box-shadow:0 8px 30px rgba(0,0,0,.35);
-
-    z-index:999;
+  z-index: 999;
 }
 
-/* ---------- LOGO ---------- */
 
-.logo{
-    width: 320px;
+/* =========================================================
+   LOGO
+   ========================================================= */
 
-    display: flex;
-    align-items: center;
+.logo {
+  width: 320px;
+
+  display: flex;
+  align-items: center;
 }
 
-.logo img{
-    width: 250px;
-    height: auto;
-    object-fit: contain;
+.logo img {
+  width: 250px;
+  height: auto;
+
+  object-fit: contain;
 }
 
-/* ---------- MENU ---------- */
 
-.menu{
-    flex: 1;
+/* =========================================================
+   MENU DESKTOP
+   ========================================================= */
 
-    display: flex;
-    justify-content: center;
-    transform:translateX(110px);
+.menu {
+  flex: 1;
 
-    gap: 54px;
+  display: flex;
+  justify-content: center;
+
+  transform: translateX(110px);
+
+  gap: 54px;
 }
 
-.menu a{
-    color:#F5F5F5;
+.menu a {
+  position: relative;
 
-    text-decoration:none;
+  color: #F5F5F5;
 
-    font-family:"Manrope",sans-serif;
+  text-decoration: none;
 
-    font-size:13px;
+  font-family: "Manrope", sans-serif;
 
-    font-weight:300;
+  font-size: 13px;
+  font-weight: 300;
 
-    letter-spacing:.18em;
+  letter-spacing: 0.18em;
 
-    
-
-    transition:.3s;
+  transition: 0.3s;
 }
 
-.menu a:hover{
-    color:#8F63FF;
+.menu a:hover {
+  color: #C9A8FF;
 }
 
-/* ---------- BOTÃO ---------- */
+.menu a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -10px;
+
+  width: 0;
+  height: 1px;
+
+  background: #C9A8FF;
+
+  transform: translateX(-50%);
+
+  box-shadow:
+    0 0 4px rgba(201, 168, 255, 0.55),
+    0 0 9px rgba(201, 168, 255, 0.35),
+    0 0 16px rgba(143, 99, 255, 0.18);
+
+  transition: width 0.3s ease;
+}
+
+.menu a.active::after {
+  width: 28px;
+}
+
+
+/* =========================================================
+   BOTÃO DESKTOP
+   ========================================================= */
 
 .button {
   margin-left: auto;
@@ -88,7 +123,7 @@
 
   border-radius: 12px;
 
-  border: 1px solid rgba(143, 99, 255, .35);
+  border: 1px solid rgba(143, 99, 255, 0.35);
 
   background: transparent;
 
@@ -96,9 +131,9 @@
 
   font-family: "Manrope", sans-serif;
 
-   font-size: 13px;
+  font-size: 13px;
 
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
 
   text-decoration: none;
 
@@ -106,7 +141,7 @@
 
   box-sizing: border-box;
 
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .button:hover {
@@ -125,37 +160,185 @@
   color: white;
 
   box-shadow:
-    0 0 12px rgba(143, 99, 255, .25),
-    0 0 24px rgba(143, 99, 255, .12);
+    0 0 12px rgba(143, 99, 255, 0.25),
+    0 0 24px rgba(143, 99, 255, 0.12);
 }
 
-.menu a {
-    position: relative;
+
+/* =========================================================
+   ELEMENTOS MOBILE — PADRÃO DESKTOP
+   ========================================================= */
+
+.menuButton {
+  display: none;
 }
 
-.menu a::after {
-    content: "";
+.mobileMenu {
+  display: none;
+}
 
-    position: absolute;
 
-    left: 50%;
-    bottom: -10px;
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-    width: 0;
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 72px;
+
+    padding: 0 20px;
+  }
+
+
+  /* ---------- LOGO ---------- */
+
+  .logo {
+    width: auto;
+
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    width: 145px;
+  }
+
+
+  /* ---------- ESCONDE DESKTOP ---------- */
+
+  .menu,
+  .button {
+    display: none;
+  }
+
+
+  /* ---------- HAMBURGER ---------- */
+
+  .menuButton {
+    display: flex;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: transparent;
+
+    border: 1px solid rgba(143, 99, 255, 0.35);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    z-index: 1002;
+  }
+
+  .menuButton span {
+    display: block;
+
+    width: 17px;
     height: 1px;
 
-    background: #C9A8FF;
+    background: #F5F5F5;
 
-    transform: translateX(-50%);
+    transition: 0.3s ease;
+  }
 
-    box-shadow:
-    0 0 4px rgba(201,168,255,.55),
-    0 0 9px rgba(201,168,255,.35),
-    0 0 16px rgba(143,99,255,.18);
 
-    transition: width .3s ease;
-}
+  /* ---------- HAMBURGER → X ---------- */
 
-.menu a.active::after {
-    width: 28px;
+  .menuButtonOpen span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menuButtonOpen span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuButtonOpen span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+
+  /* ---------- MENU MOBILE ---------- */
+
+  .mobileMenu {
+    display: flex;
+
+    position: fixed;
+
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 32px 24px 36px;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 26px;
+
+    background: #07070B;
+
+    border-bottom: 1px solid rgba(177, 140, 255, 0.12);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+    transform: translateY(-120%);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
+
+    z-index: 1001;
+  }
+
+  .mobileMenuOpen {
+    transform: translateY(0);
+
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+
+  /* ---------- LINKS MOBILE ---------- */
+
+  .mobileMenu a {
+    position: relative;
+
+    color: #F5F5F5;
+
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+    font-weight: 300;
+
+    letter-spacing: 0.18em;
+
+    padding: 4px 0;
+
+    transition: 0.3s ease;
+  }
+
+  .mobileMenu a:hover {
+    color: #C9A8FF;
+  }
+
+  .mobileMenu a.active {
+    color: #C9A8FF;
+  }
 }
