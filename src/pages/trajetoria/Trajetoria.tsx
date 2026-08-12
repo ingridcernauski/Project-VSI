@@ -1,672 +1,818 @@
+
 import styles from "./Trajetoria.module.css";
 import {
   Database,
   BarChart3,
   GraduationCap,
   Target,
-  BrainCircuit
+  BrainCircuit,
+  Languages
 } from "lucide-react";
 
-import {  Languages } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 
 function Trajetoria() {
+  const { language } = useLanguage();
+
   return (
     <main className={styles.journey}>
 
       <section className={styles.journey}>
 
-  <div className={styles.curve}>
-    <div className={styles.flare}></div>
-  </div>
+        <div className={styles.curve}>
+          <div className={styles.flare}></div>
+        </div>
 
-  <div className={styles.journeyHeader}>
-    <span>JORNADA</span>
-
-    {/*<h2>
-      O caminho <em>até aqui.</em>
-    </h2>*/}
-  </div>
-
-
-  {/*TIMELINE*/}
-
-  <div className={styles.timeline}>
-
-  <div className={styles.timelineLine}></div>
-
-  <div className={styles.timelineItem}>
-    <div className={styles.timelineIcon}>
-  <Database size={20} strokeWidth={1.5} />
-</div>
-    <span className={styles.timelineYear}>2016</span>
-    <h3>Início</h3>
-    <p>Entrada no universo de dados.</p>
-  </div>
-
-  <div className={styles.timelineItem}>
-    <div className={styles.timelineIcon}>
-  <BarChart3 size={20} strokeWidth={1.5} />
-</div>
-    <span className={styles.timelineYear}>2019</span>
-    <h3>Evolução</h3>
-    <p>Expansão em Bl e indicadores.</p>
-  </div>
-
-  <div className={styles.timelineItem}>
-    <div className={styles.timelineIcon}>
-  <GraduationCap size={20} strokeWidth={1.5} />
-</div>
-    <span className={styles.timelineYear}>2020</span>
-    <h3>Especialização</h3>
-    <p>Dados • Power BI •
-    Analytics.</p>
-  </div>
-
-  <div className={styles.timelineItem}>
-    <div className={styles.timelineIcon}>
-  <Target size={20} strokeWidth={1.5} />
-</div>
-    <span className={styles.timelineYear}>2021</span>
-    <h3>Estratégia</h3>
-    <p>Projetos de maior impacto.</p>
-  </div>
-
-    <div className={styles.timelineItem}>
-    <div className={styles.timelineIcon}>
-  <BrainCircuit size={20} strokeWidth={1.5} />
-</div>
-    <span className={styles.timelineYear}>2026</span>
-    <h3>Novas Fronteiras</h3>
-    <p>Inteligência Artificial •
-      Programação • Tecnologia.</p>
-
-
-  </div>
-
-</div>
-
-</section>
-
-{/* =========================================================
-    FORMAÇÃO & IDIOMAS
-    ========================================================= */}
-
-<section className={styles.educationSection}>
-
-  <div className={styles.educationHeader}>
-
-    <span className={styles.sectionLabel}>
-      FORMAÇÃO & IDIOMAS
-    </span>
-
-    <h2>
-      Formação <em>&</em> Idiomas
-    </h2>
-
-    <p>
-    </p>
-
-  </div>
-
-
-  <div className={styles.educationContent}>
-
-    {/* FORMAÇÃO */}
-
-    <div className={styles.educationColumn}>
-
-      <div className={styles.educationColumnHeader}>
-        <GraduationCap />
-        <h3>FORMAÇÃO</h3>
-      </div>
-
-      <div className={styles.educationItem}>
-        <h4>Pós-graduação em Gestão de Projetos</h4>
-        <p>Anhembi Morumbi</p>
-        <span className={styles.educationPeriod}>
-          Em curso
-        </span>
-      </div>
-
-      <div className={styles.educationItem}>
-        <h4>Produção Audiovisual</h4>
-        <p>Faculdade das Américas</p>
-        <span className={styles.educationPeriod}>
-          2018
-        </span>
-      </div>
-
-    </div>
-
-
-    {/* IDIOMAS */}
-
-    <div className={styles.educationColumn}>
-
-      <div className={styles.educationColumnHeader}>
-        <Languages />
-        <h3>IDIOMAS</h3>
-      </div>
-
-      <div className={styles.languageList}>
-
-        <div className={styles.languageItem}>
-          <span className={styles.languageName}>
-            Português
-          </span>
-
-          <span className={styles.languageLevel}>
-            NATIVO
+        <div className={styles.journeyHeader}>
+          <span>
+            {language === "pt" ? "JORNADA" : "JOURNEY"}
           </span>
         </div>
 
-        <div className={styles.languageItem}>
-          <span className={styles.languageName}>
-            Inglês
-          </span>
+        {/* TIMELINE */}
 
-          <span className={styles.languageLevel}>
-            C1 - AVANÇADO
-          </span>
+        <div className={styles.timeline}>
+
+          <div className={styles.timelineLine}></div>
+
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}>
+              <Database size={20} strokeWidth={1.5} />
+            </div>
+
+            <span className={styles.timelineYear}>2016</span>
+
+            <h3>
+              {language === "pt" ? "Início" : "Beginning"}
+            </h3>
+
+            <p>
+              {language === "pt"
+                ? "Entrada no universo de dados."
+                : "Entering the world of data."}
+            </p>
+          </div>
+
+
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}>
+              <BarChart3 size={20} strokeWidth={1.5} />
+            </div>
+
+            <span className={styles.timelineYear}>2019</span>
+
+            <h3>
+              {language === "pt" ? "Evolução" : "Growth"}
+            </h3>
+
+            <p>
+              {language === "pt"
+                ? "Expansão em BI e indicadores."
+                : "Expanding into BI and performance indicators."}
+            </p>
+          </div>
+
+
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}>
+              <GraduationCap size={20} strokeWidth={1.5} />
+            </div>
+
+            <span className={styles.timelineYear}>2020</span>
+
+            <h3>
+              {language === "pt"
+                ? "Especialização"
+                : "Specialization"}
+            </h3>
+
+            <p>
+              {language === "pt"
+                ? "Dados • Power BI • Analytics."
+                : "Data • Power BI • Analytics."}
+            </p>
+          </div>
+
+
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}>
+              <Target size={20} strokeWidth={1.5} />
+            </div>
+
+            <span className={styles.timelineYear}>2021</span>
+
+            <h3>
+              {language === "pt" ? "Estratégia" : "Strategy"}
+            </h3>
+
+            <p>
+              {language === "pt"
+                ? "Projetos de maior impacto."
+                : "Higher-impact projects."}
+            </p>
+          </div>
+
+
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}>
+              <BrainCircuit size={20} strokeWidth={1.5} />
+            </div>
+
+            <span className={styles.timelineYear}>2026</span>
+
+            <h3>
+              {language === "pt"
+                ? "Novas Fronteiras"
+                : "New Frontiers"}
+            </h3>
+
+            <p>
+              {language === "pt"
+                ? "Inteligência Artificial • Programação • Tecnologia."
+                : "Artificial Intelligence • Programming • Technology."}
+            </p>
+          </div>
+
         </div>
 
-        <div className={styles.languageItem}>
-          <span className={styles.languageName}>
-            Francês
+      </section>
+
+
+      {/* =========================================================
+          FORMAÇÃO & IDIOMAS
+          ========================================================= */}
+
+      <section className={styles.educationSection}>
+
+        <div className={styles.educationHeader}>
+
+          <span className={styles.sectionLabel}>
+            {language === "pt"
+              ? "FORMAÇÃO & IDIOMAS"
+              : "EDUCATION & LANGUAGES"}
           </span>
 
-          <span className={styles.languageLevel}>
-            EM DESENVOLVIMENTO
-          </span>
+          <h2>
+            {language === "pt" ? (
+              <>
+                Formação <em>&</em> Idiomas
+              </>
+            ) : (
+              <>
+                Education <em>&</em> Languages
+              </>
+            )}
+          </h2>
+
+          <p></p>
+
         </div>
 
-      </div>
 
-    </div>
+        <div className={styles.educationContent}>
 
-  </div>
+          {/* FORMAÇÃO */}
 
-</section>
+          <div className={styles.educationColumn}>
 
+            <div className={styles.educationColumnHeader}>
+              <GraduationCap />
 
+              <h3>
+                {language === "pt" ? "FORMAÇÃO" : "EDUCATION"}
+              </h3>
+            </div>
 
 
+            <div className={styles.educationItem}>
 
-{/*CURRICULUM*/}
+              <h4>
+                {language === "pt"
+                  ? "Pós-graduação em Gestão de Projetos"
+                  : "Postgraduate Degree in Project Management"}
+              </h4>
 
-<section className={styles.curriculumSection}>
-  <div className={styles.curriculumHeader}>
-  <span className={styles.sectionLabel}>CURRÍCULO</span>
+              <p>Anhembi Morumbi</p>
 
-  <h2>
-    Experiência <em>Profissional</em>
-  </h2>
+              <span className={styles.educationPeriod}>
+                {language === "pt" ? "Em curso" : "In progress"}
+              </span>
 
-  <p>
-      Profissional de Business Intelligence com experiência em dados,
-      analytics e tecnologia, conectando visão de negócio, análise
-      estratégica e soluções orientadas a resultados.
-    </p>
-</div>
+            </div>
 
-{/* =========================================================
-    EXPERIÊNCIA PROFISSIONAL
-========================================================= */}
 
-<section className={styles.experience}>
+            <div className={styles.educationItem}>
 
-  {/* TIMELINE */}
+              <h4>
+                {language === "pt"
+                  ? "Produção Audiovisual"
+                  : "Audiovisual Production"}
+              </h4>
 
-  <div className={styles.experienceTimeline}>
+              <p>Faculdade das Américas</p>
 
-    <div className={styles.experiencePeriod}>
-      <span>10/2024 - 03/2026</span>
-        <div className={styles.experienceDot}></div>
+              <span className={styles.educationPeriod}>
+                2018
+              </span>
 
-    </div>
+            </div>
 
-    <div className={styles.experienceDotStart}></div>
+          </div>
 
-    <div className={styles.experienceLine}></div>
 
-    
+          {/* IDIOMAS */}
 
-  </div>
+          <div className={styles.educationColumn}>
 
+            <div className={styles.educationColumnHeader}>
+              <Languages />
 
-  {/* CONTEÚDO */}
+              <h3>
+                {language === "pt" ? "IDIOMAS" : "LANGUAGES"}
+              </h3>
+            </div>
 
-  <div className={`${styles.experienceContent} ${styles.experienceContentSecond}`}>
 
-    <h3>
-      Telefônica Brasil <em>(Vivo)</em>
-    </h3>
+            <div className={styles.languageList}>
 
-    <h4>
-      Analista Sênior de Dados | BI
-    </h4>
+              <div className={styles.languageItem}>
 
-    <p className={styles.experienceIntro}>
-      Liderança técnica em Business Intelligence, conectando dados,
-      tecnologia e estratégia de negócio.
-    </p>
+                <span className={styles.languageName}>
+                  {language === "pt" ? "Português" : "Portuguese"}
+                </span>
 
+                <span className={styles.languageLevel}>
+                  {language === "pt" ? "NATIVO" : "NATIVE"}
+                </span>
 
-    {/* PROJETOS / DESTAQUES */}
+              </div>
 
-    <div className={styles.experienceProjects}>
 
-      <div className={styles.projectHighlight}>
-        <span>01</span>
+              <div className={styles.languageItem}>
 
-        <h5>
-          Dashboards Executivos
-        </h5>
+                <span className={styles.languageName}>
+                  {language === "pt" ? "Inglês" : "English"}
+                </span>
 
-        <p>
-          Desenvolvimento de dashboards em Power BI para
-          acompanhamento de KPIs e suporte à tomada de decisão.
-        </p>
-      </div>
+                <span className={styles.languageLevel}>
+                  {language === "pt"
+                    ? "C1 - AVANÇADO"
+                    : "C1 - ADVANCED"}
+                </span>
 
+              </div>
 
-      <div className={styles.projectHighlight}>
-        <span>02</span>
 
-        <h5>
-          Apresentações para Diretoria
-        </h5>
+              <div className={styles.languageItem}>
 
-        <p>
-          Consolidação e análise de indicadores estratégicos
-          para apresentações executivas e comunicação de insights.
-        </p>
-      </div>
+                <span className={styles.languageName}>
+                  {language === "pt" ? "Francês" : "French"}
+                </span>
 
+                <span className={styles.languageLevel}>
+                  {language === "pt"
+                    ? "EM DESENVOLVIMENTO"
+                    : "IN DEVELOPMENT"}
+                </span>
 
-      <div className={styles.projectHighlight}>
-        <span>03</span>
+              </div>
 
-        <h5>
-          Data & Analytics
-        </h5>
+            </div>
 
-        <p>
-          Investigação de dados, consultas SQL, validação de
-          informações e análise de inconsistências.
-        </p>
-      </div>
+          </div>
 
-    </div>
+        </div>
 
+      </section>
 
-    {/* TECNOLOGIAS */}
 
-    <div className={styles.experienceTags}>
-      <span>POWER BI</span>
-      <span>SQL</span>
-      <span>DATA ANALYTICS</span>
-      <span>BUSINESS INTELLIGENCE</span>
-    </div>
+      {/* CURRICULUM */}
 
-  </div>
-  <div className={styles.experienceSpacer}></div>
+      <section className={styles.curriculumSection}>
 
-{/* =========================================================
-EXPERIÊNCIA 02 — ANALISTA PLENO DE DADOS | BI
-========================================================= */}
+        <div className={styles.curriculumHeader}>
 
-{/* TIMELINE */}
+          <span className={styles.sectionLabel}>
+            {language === "pt" ? "CURRÍCULO" : "RESUME"}
+          </span>
 
-<div className={styles.experiencePeriodSecond}>
-  <span>10/2022 - 10/2024</span>
-  <div className={styles.experienceDot}></div>
-</div>
+          <h2>
+            {language === "pt" ? (
+              <>
+                Experiência <em>Profissional</em>
+              </>
+            ) : (
+              <>
+                Professional <em>Experience</em>
+              </>
+            )}
+          </h2>
 
-<div className={styles.experienceDotStart}></div>
+          <p>
+            {language === "pt"
+              ? "Profissional de Business Intelligence com experiência em dados, analytics e tecnologia, conectando visão de negócio, análise estratégica e soluções orientadas a resultados."
+              : "Business Intelligence professional with experience in data, analytics, and technology, connecting business vision, strategic analysis, and results-driven solutions."}
+          </p>
 
+        </div>
 
-{/* CONTEÚDO */}
 
-  <div className={`${styles.experienceContent} ${styles.experienceContentSecond}`}>
+        {/* =========================================================
+            EXPERIÊNCIA PROFISSIONAL
+            ========================================================= */}
 
-<h3>
-  Telefônica Brasil <em>(Vivo)</em>
-</h3>
+        <section className={styles.experience}>
 
-<h4>
-  Analista Pleno de Dados | BI
-</h4>
+          {/* EXPERIÊNCIA 01 */}
 
-<p className={styles.experienceIntro}>
-  Atuação em Business Intelligence, análise de dados e desenvolvimento
-  de soluções para suporte às áreas de negócio.
-</p>
+          <div className={styles.experienceTimeline}>
 
+            <div className={styles.experiencePeriod}>
+              <span>10/2024 - 03/2026</span>
 
-{/* PROJETOS / DESTAQUES */}
+              <div className={styles.experienceDot}></div>
+            </div>
 
-<div className={styles.experienceProjects}>
+            <div className={styles.experienceDotStart}></div>
 
-  <div className={styles.projectHighlight}>
-    <span>01</span>
+            <div className={styles.experienceLine}></div>
 
-    <h5>
-      SQL & Data Analytics
-    </h5>
+          </div>
 
-    <p>
-      Desenvolvimento de consultas SQL, análise e validação de dados,
-      consolidação de bases e identificação de inconsistências.
-    </p>
-  </div>
 
+          <div className={`${styles.experienceContent} ${styles.experienceContentSecond}`}>
 
-  <div className={styles.projectHighlight}>
-    <span>02</span>
+            <h3>
+              Telefônica Brasil <em>(Vivo)</em>
+            </h3>
 
-    <h5>
-      Indicadores Estratégicos
-    </h5>
+            <h4>
+              {language === "pt"
+                ? "Analista Sênior de Dados | BI"
+                : "Senior Data Analyst | BI"}
+            </h4>
 
-    <p>
-      Construção e consolidação de indicadores, apoio na definição
-      de regras de negócio e suporte às áreas através de análises.
-    </p>
-  </div>
+            <p className={styles.experienceIntro}>
+              {language === "pt"
+                ? "Liderança técnica em Business Intelligence, conectando dados, tecnologia e estratégia de negócio."
+                : "Technical leadership in Business Intelligence, connecting data, technology, and business strategy."}
+            </p>
 
 
-  <div className={styles.projectHighlight}>
-    <span>03</span>
+            <div className={styles.experienceProjects}>
 
-    <h5>
-      Dashboards & Business Support
-    </h5>
+              <div className={styles.projectHighlight}>
 
-    <p>
-      Desenvolvimento de dashboards analíticos e participação em
-      projetos de melhoria contínua orientados às necessidades do negócio.
-    </p>
-  </div>
+                <span>01</span>
 
-</div>
+                <h5>
+                  {language === "pt"
+                    ? "Dashboards Executivos"
+                    : "Executive Dashboards"}
+                </h5>
 
+                <p>
+                  {language === "pt"
+                    ? "Desenvolvimento de dashboards em Power BI para acompanhamento de KPIs e suporte à tomada de decisão."
+                    : "Development of Power BI dashboards for KPI monitoring and decision-making support."}
+                </p>
 
-{/* TECNOLOGIAS */}
+              </div>
 
-<div className={styles.experienceTags}>
-  <span>POWER BI</span>
-  <span>SQL</span>
-  <span>DATA ANALYTICS</span>
-  <span>BUSINESS INTELLIGENCE</span>
-</div>
 
-  <div className={styles.experienceSpacer2}></div>
+              <div className={styles.projectHighlight}>
 
+                <span>02</span>
 
-  
+                <h5>
+                  {language === "pt"
+                    ? "Apresentações para Diretoria"
+                    : "Executive Presentations"}
+                </h5>
 
+                <p>
+                  {language === "pt"
+                    ? "Consolidação e análise de indicadores estratégicos para apresentações executivas e comunicação de insights."
+                    : "Consolidation and analysis of strategic indicators for executive presentations and insight communication."}
+                </p>
 
-{/* =========================================================
-EXPERIÊNCIA 03 — ANALISTA JÚNIOR DE DADOS | BI
-========================================================= */}
+              </div>
 
-{/* TIMELINE */}
 
-<div className={styles.experiencePeriodThird}>
-  <span>03/2021 - 10/2022</span>
-  <div className={styles.experienceDot}></div>
-</div>
+              <div className={styles.projectHighlight}>
 
-<div className={styles.experienceDotStart}></div>
+                <span>03</span>
 
-<div className={styles.experienceLine}></div>
+                <h5>
+                  Data & Analytics
+                </h5>
 
+                <p>
+                  {language === "pt"
+                    ? "Investigação de dados, consultas SQL, validação de informações e análise de inconsistências."
+                    : "Data investigation, SQL queries, information validation, and inconsistency analysis."}
+                </p>
 
-{/* CONTEÚDO */}
+              </div>
 
-<h3>
-  Telefônica Brasil <em>(Vivo)</em>
-</h3>
+            </div>
 
-<h4>
-  Analista Júnior de Dados | BI
-</h4>
 
-<p className={styles.experienceIntro}>
-  Atuação em Business Intelligence, análise de dados e suporte
-  às operações através de indicadores e soluções analíticas.
-</p>
+            <div className={styles.experienceTags}>
+              <span>POWER BI</span>
+              <span>SQL</span>
+              <span>DATA ANALYTICS</span>
+              <span>BUSINESS INTELLIGENCE</span>
+            </div>
 
+          </div>
 
-{/* PROJETOS / DESTAQUES */}
+          <div className={styles.experienceSpacer}></div>
 
-<div className={styles.experienceProjects}>
 
-  <div className={styles.projectHighlight}>
-    <span>01</span>
+          {/* EXPERIÊNCIA 02 */}
 
-    <h5>
-      Monitoramento & Indicadores
-    </h5>
+          <div className={styles.experiencePeriodSecond}>
 
-    <p>
-      Monitoramento dos principais indicadores operacionais,
-      desenvolvimento de relatórios gerenciais e acompanhamento
-      de resultados.
-    </p>
-  </div>
+            <span>10/2022 - 10/2024</span>
 
+            <div className={styles.experienceDot}></div>
 
-  <div className={styles.projectHighlight}>
-    <span>02</span>
+          </div>
 
-    <h5>
-      Dashboards & Análise de Dados
-    </h5>
+          <div className={styles.experienceDotStart}></div>
 
-    <p>
-      Desenvolvimento de dashboards e análises de dados para
-      suporte às operações e identificação de oportunidades
-      de melhoria.
-    </p>
-  </div>
 
+          <div className={`${styles.experienceContent} ${styles.experienceContentSecond}`}>
 
-  <div className={styles.projectHighlight}>
-    <span>03</span>
+            <h3>
+              Telefônica Brasil <em>(Vivo)</em>
+            </h3>
 
-    <h5>
-      Expansão da Rede de Fibra
-    </h5>
+            <h4>
+              {language === "pt"
+                ? "Analista Pleno de Dados | BI"
+                : "Mid-Level Data Analyst | BI"}
+            </h4>
 
-    <p>
-      Apoio a projetos relacionados à expansão da rede de fibra
-      óptica e análise de dados para suporte às decisões operacionais.
-    </p>
-  </div>
+            <p className={styles.experienceIntro}>
+              {language === "pt"
+                ? "Atuação em Business Intelligence, análise de dados e desenvolvimento de soluções para suporte às áreas de negócio."
+                : "Worked across Business Intelligence, data analysis, and solution development to support business teams."}
+            </p>
 
-</div>
 
+            <div className={styles.experienceProjects}>
 
-{/* TECNOLOGIAS */}
+              <div className={styles.projectHighlight}>
 
-<div className={styles.experienceTags}>
-  <span>POWER BI</span>
-  <span>SQL</span>
-  <span>DATA ANALYTICS</span>
-  <span>BUSINESS INTELLIGENCE</span>
-</div>
-</div>
-</section>
+                <span>01</span>
 
+                <h5>
+                  SQL & Data Analytics
+                </h5>
 
-</section>
+                <p>
+                  {language === "pt"
+                    ? "Desenvolvimento de consultas SQL, análise e validação de dados, consolidação de bases e identificação de inconsistências."
+                    : "Development of SQL queries, data analysis and validation, data consolidation, and identification of inconsistencies."}
+                </p>
 
-{/*HARD & SOFT SKILLS*/}
-{/* =========================================================
-    HARD & SOFT SKILLS
-    ========================================================= */}
+              </div>
 
-  
 
-<section className={styles.skillsSection}>
+              <div className={styles.projectHighlight}>
 
-  {/* TRANSIÇÃO */}
+                <span>02</span>
 
-  <div className={styles.skillsTransition}></div>
+                <h5>
+                  {language === "pt"
+                    ? "Indicadores Estratégicos"
+                    : "Strategic Indicators"}
+                </h5>
 
+                <p>
+                  {language === "pt"
+                    ? "Construção e consolidação de indicadores, apoio na definição de regras de negócio e suporte às áreas através de análises."
+                    : "Development and consolidation of indicators, support in defining business rules, and analytical support for business teams."}
+                </p>
 
-  {/* CABEÇALHO */}
+              </div>
 
-  <div className={styles.skillsHeader}>
 
-    <span>
-      COMPETÊNCIAS
-    </span>
+              <div className={styles.projectHighlight}>
 
-    <h2>
-      Hard Skills <em>&</em> Soft Skills
-    </h2>
+                <span>03</span>
 
-    <p>
-      Conhecimento técnico aliado ao pensamento estratégico
-      e à resolução de problemas orientada ao negócio.
-    </p>
+                <h5>
+                  Dashboards & Business Support
+                </h5>
 
-  </div>
+                <p>
+                  {language === "pt"
+                    ? "Desenvolvimento de dashboards analíticos e participação em projetos de melhoria contínua orientados às necessidades do negócio."
+                    : "Development of analytical dashboards and participation in continuous improvement projects aligned with business needs."}
+                </p>
 
+              </div>
 
-<div className={styles.skillsContent}>
+            </div>
 
- {/* =========================================================
-    HARD SKILLS
-    ========================================================= */}
 
-<div className={styles.skillsBox}>
+            <div className={styles.experienceTags}>
+              <span>POWER BI</span>
+              <span>SQL</span>
+              <span>DATA ANALYTICS</span>
+              <span>BUSINESS INTELLIGENCE</span>
+            </div>
 
-  <div className={styles.skillsColumnHeader}>
-    <Database />
-    <h3>HARD SKILLS</h3>
-  </div>
+          </div>
 
-  <div className={styles.hardSkillsList}>
+          <div className={styles.experienceSpacer2}></div>
 
-    <span className={styles.featuredSkill}>
-      Power BI
-    </span>
 
-    <span className={styles.featuredSkill}>
-      SQL
-    </span>
+          {/* EXPERIÊNCIA 03 */}
 
-    <span className={styles.featuredSkill}>
-      DAX
-    </span>
+          <div className={styles.experiencePeriodThird}>
 
-    <span>
-      Python
-    </span>
+            <span>03/2021 - 10/2022</span>
 
-    <span>
-      Power Query
-    </span>
+            <div className={styles.experienceDot}></div>
 
-    <span>
-      Excel
-    </span>
+          </div>
 
-    <span>
-      Tableau
-    </span>
+          <div className={styles.experienceDotStart}></div>
 
-    <span>
-      Data Analytics
-    </span>
+          <div className={styles.experienceLine}></div>
 
-    <span>
-      Business Intelligence
-    </span>
 
-    <span>
-      AWS
-    </span>
+          <h3>
+            Telefônica Brasil <em>(Vivo)</em>
+          </h3>
 
-  </div>
+          <h4>
+            {language === "pt"
+              ? "Analista Júnior de Dados | BI"
+              : "Junior Data Analyst | BI"}
+          </h4>
 
-</div>
+          <p className={styles.experienceIntro}>
+            {language === "pt"
+              ? "Atuação em Business Intelligence, análise de dados e suporte às operações através de indicadores e soluções analíticas."
+              : "Worked across Business Intelligence, data analysis, and operational support through performance indicators and analytical solutions."}
+          </p>
 
 
-{/* =========================================================
-    SOFT SKILLS
-    ========================================================= */}
+          <div className={styles.experienceProjects}>
 
-<div className={styles.skillsBox}>
+            <div className={styles.projectHighlight}>
 
-  <div className={styles.skillsColumnHeader}>
-    <BrainCircuit />
-    <h3>SOFT SKILLS</h3>
-  </div>
+              <span>01</span>
 
-  <div className={styles.softSkillsList}>
+              <h5>
+                {language === "pt"
+                  ? "Monitoramento & Indicadores"
+                  : "Monitoring & Indicators"}
+              </h5>
 
-    <div className={styles.softSkill}>
-      <span>01</span>
-      <p>Pensamento estratégico</p>
-    </div>
+              <p>
+                {language === "pt"
+                  ? "Monitoramento dos principais indicadores operacionais, desenvolvimento de relatórios gerenciais e acompanhamento de resultados."
+                  : "Monitoring key operational indicators, developing management reports, and tracking performance."}
+              </p>
 
-    <div className={styles.softSkill}>
-      <span>02</span>
-      <p>Comunicação executiva</p>
-    </div>
+            </div>
 
-    <div className={styles.softSkill}>
-      <span>03</span>
-      <p>Resolução de problemas</p>
-    </div>
 
-    <div className={styles.softSkill}>
-      <span>04</span>
-      <p>Visão analítica</p>
-    </div>
+            <div className={styles.projectHighlight}>
 
-    <div className={styles.softSkill}>
-      <span>05</span>
-      <p>Gestão de projetos</p>
-    </div>
+              <span>02</span>
 
-    <div className={styles.softSkill}>
-      <span>06</span>
-      <p>Storytelling com dados</p>
-    </div>
+              <h5>
+                {language === "pt"
+                  ? "Dashboards & Análise de Dados"
+                  : "Dashboards & Data Analysis"}
+              </h5>
 
-  </div>
+              <p>
+                {language === "pt"
+                  ? "Desenvolvimento de dashboards e análises de dados para suporte às operações e identificação de oportunidades de melhoria."
+                  : "Development of dashboards and data analyses to support operations and identify improvement opportunities."}
+              </p>
 
-</div>
-</div>
-</section>
-{/* =========================================================
-    FOOTER
-    ========================================================= */}
+            </div>
 
-<section className={styles.footerSection}>
 
-  <footer className={styles.footer}>
+            <div className={styles.projectHighlight}>
 
-    <p>© 2026 Ingrid Cernauski</p>
+              <span>03</span>
 
-    <span>
-      Business Intelligence • Data Strategy • AI
-    </span>
+              <h5>
+                {language === "pt"
+                  ? "Expansão da Rede de Fibra"
+                  : "Fiber Network Expansion"}
+              </h5>
 
-  </footer>
+              <p>
+                {language === "pt"
+                  ? "Apoio a projetos relacionados à expansão da rede de fibra óptica e análise de dados para suporte às decisões operacionais."
+                  : "Support for fiber network expansion projects and data analysis to inform operational decisions."}
+              </p>
 
-</section>
+            </div>
 
+          </div>
+
+
+          <div className={styles.experienceTags}>
+            <span>POWER BI</span>
+            <span>SQL</span>
+            <span>DATA ANALYTICS</span>
+            <span>BUSINESS INTELLIGENCE</span>
+          </div>
+
+        </section>
+
+      </section>
+
+
+      {/* =========================================================
+          HARD & SOFT SKILLS
+          ========================================================= */}
+
+      <section className={styles.skillsSection}>
+
+        <div className={styles.skillsTransition}></div>
+
+
+        <div className={styles.skillsHeader}>
+
+          <span>
+            {language === "pt" ? "COMPETÊNCIAS" : "SKILLS"}
+          </span>
+
+          <h2>
+            Hard Skills <em>&</em> Soft Skills
+          </h2>
+
+          <p>
+            {language === "pt"
+              ? "Conhecimento técnico aliado ao pensamento estratégico e à resolução de problemas orientada ao negócio."
+              : "Technical expertise combined with strategic thinking and business-oriented problem solving."}
+          </p>
+
+        </div>
+
+
+        <div className={styles.skillsContent}>
+
+          {/* HARD SKILLS */}
+
+          <div className={styles.skillsBox}>
+
+            <div className={styles.skillsColumnHeader}>
+              <Database />
+
+              <h3>HARD SKILLS</h3>
+            </div>
+
+
+            <div className={styles.hardSkillsList}>
+
+              <span className={styles.featuredSkill}>
+                Power BI
+              </span>
+
+              <span className={styles.featuredSkill}>
+                SQL
+              </span>
+
+              <span className={styles.featuredSkill}>
+                DAX
+              </span>
+
+              <span>Python</span>
+              <span>Power Query</span>
+              <span>Excel</span>
+              <span>Tableau</span>
+              <span>Data Analytics</span>
+              <span>Business Intelligence</span>
+              <span>AWS</span>
+
+            </div>
+
+          </div>
+
+
+          {/* SOFT SKILLS */}
+
+          <div className={styles.skillsBox}>
+
+            <div className={styles.skillsColumnHeader}>
+              <BrainCircuit />
+
+              <h3>SOFT SKILLS</h3>
+            </div>
+
+
+            <div className={styles.softSkillsList}>
+
+              <div className={styles.softSkill}>
+                <span>01</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Pensamento estratégico"
+                    : "Strategic thinking"}
+                </p>
+              </div>
+
+
+              <div className={styles.softSkill}>
+                <span>02</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Comunicação executiva"
+                    : "Executive communication"}
+                </p>
+              </div>
+
+
+              <div className={styles.softSkill}>
+                <span>03</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Resolução de problemas"
+                    : "Problem solving"}
+                </p>
+              </div>
+
+
+              <div className={styles.softSkill}>
+                <span>04</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Visão analítica"
+                    : "Analytical thinking"}
+                </p>
+              </div>
+
+
+              <div className={styles.softSkill}>
+                <span>05</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Gestão de projetos"
+                    : "Project management"}
+                </p>
+              </div>
+
+
+              <div className={styles.softSkill}>
+                <span>06</span>
+
+                <p>
+                  {language === "pt"
+                    ? "Storytelling com dados"
+                    : "Data storytelling"}
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================================
+          FOOTER
+          ========================================================= */}
+
+      <section className={styles.footerSection}>
+
+        <footer className={styles.footer}>
+
+          <p>© 2026 Ingrid Cernauski</p>
+
+          <span>
+            Business Intelligence • Data Strategy • AI
+          </span>
+
+        </footer>
+
+      </section>
 
     </main>
   );
 }
+
 
 export default Trajetoria;

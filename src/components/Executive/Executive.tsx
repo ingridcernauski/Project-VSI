@@ -1,5 +1,6 @@
 import styles from "./Executive.module.css";
 
+import { useLanguage } from "../../context/LanguageContext";
 
 import {
   BarChart3,
@@ -10,7 +11,12 @@ import {
   MonitorSmartphone
 } from "lucide-react";
 
+
 export default function Executive() {
+  const { language } = useLanguage();
+
+  const pt = language === "pt";
+
   return (
     <section className={styles.executive} id="executive">
 
@@ -18,9 +24,7 @@ export default function Executive() {
 
       <div className={styles.container}>
 
-        {/* ==========================================
-            TOP
-        ========================================== */}
+        {/* TOP */}
 
         <div className={styles.top}>
 
@@ -29,26 +33,39 @@ export default function Executive() {
           <div className={styles.intro}>
 
             <span className={styles.label}>
-              PERFIL EXECUTIVO
+              {pt ? "PERFIL EXECUTIVO" : "EXECUTIVE PROFILE"}
             </span>
 
             <div className={styles.labelLine}></div>
 
             <h2 className={styles.title}>
-              Business Intelligence
-              <br />
-              que conecta estratégia,
-              <br />
-              dados e <span>decisão.</span>
+              {pt ? (
+                <>
+                  Business Intelligence
+                  <br />
+                  que conecta estratégia,
+                  <br />
+                  dados e <span>decisão.</span>
+                </>
+              ) : (
+                <>
+                  Business Intelligence
+                  <br />
+                  connecting strategy,
+                  <br />
+                  data and <span>decision.</span>
+                </>
+              )}
             </h2>
 
             <p className={styles.description}>
-              Mais de 9 anos transformando dados complexos em
-              insights acionáveis, dashboards executivos e soluções
-              analíticas que geram impacto real nos negócios.
+              {pt
+                ? "Mais de 9 anos transformando dados complexos em insights acionáveis, dashboards executivos e soluções analíticas que geram impacto real nos negócios."
+                : "Over 9 years transforming complex data into actionable insights, executive dashboards, and analytical solutions that create real business impact."}
             </p>
 
           </div>
+
 
           {/* METRICS */}
 
@@ -57,69 +74,103 @@ export default function Executive() {
             <div className={styles.metric}>
 
               <div className={styles.metricIcon}>
-             <BarChart3 size={34}/>
-</div>
+                <BarChart3 size={34} />
+              </div>
 
               <h3>9+</h3>
 
-              <h4>ANOS</h4>
+              <h4>{pt ? "ANOS" : "YEARS"}</h4>
 
               <div className={styles.metricLine}></div>
 
               <p>
-                de experiência em
-                <br />
-                Business Intelligence
-                <br />
-                e Analytics
+                {pt ? (
+                  <>
+                    de experiência em
+                    <br />
+                    Business Intelligence
+                    <br />
+                    e Analytics
+                  </>
+                ) : (
+                  <>
+                    of experience in
+                    <br />
+                    Business Intelligence
+                    <br />
+                    and Analytics
+                  </>
+                )}
               </p>
 
             </div>
 
+
             <div className={styles.metric}>
 
-              
-
               <div className={styles.metricIcon}>
-              <Target size={34}/>
+                <Target size={34} />
               </div>
 
               <h3>100+</h3>
 
-              <h4>DASHBOARDS</h4>
+              <h4>{pt ? "DASHBOARDS" : "DASHBOARDS"}</h4>
 
               <div className={styles.metricLine}></div>
 
               <p>
-                executivos entregues
-                <br />
-                para tomada de decisão
-                <br />
-                estratégica
+                {pt ? (
+                  <>
+                    executivos entregues
+                    <br />
+                    para tomada de decisão
+                    <br />
+                    estratégica
+                  </>
+                ) : (
+                  <>
+                    executive dashboards
+                    <br />
+                    delivered for strategic
+                    <br />
+                    decision-making
+                  </>
+                )}
               </p>
 
             </div>
 
+
             <div className={styles.metric}>
 
-              
-
-             <div className={styles.metricIcon}>
-              <MonitorSmartphone size={34}/>
-</div>
+              <div className={styles.metricIcon}>
+                <MonitorSmartphone size={34} />
+              </div>
 
               <h3>40+</h3>
 
-              <h4>PROJETOS</h4>
+              <h4>{pt ? "PROJETOS" : "PROJECTS"}</h4>
 
               <div className={styles.metricLine}></div>
 
               <p>
-                de BI, automação e
-                <br />
-                análise de dados com
-                <br />
-                impacto mensurável
+                {pt ? (
+                  <>
+                    de BI, automação e
+                    <br />
+                    análise de dados com
+                    <br />
+                    impacto mensurável
+                  </>
+                ) : (
+                  <>
+                    in BI, automation and
+                    <br />
+                    data analytics with
+                    <br />
+                    measurable impact
+                  </>
+                )}
               </p>
 
             </div>
@@ -128,11 +179,11 @@ export default function Executive() {
 
         </div>
 
+
         <div className={styles.divider}></div>
 
-        {/* ==========================================
-            BOTTOM
-        ========================================== */}
+
+        {/* BOTTOM */}
 
         <div className={styles.bottom}>
 
@@ -141,142 +192,168 @@ export default function Executive() {
           <div className={styles.expertiseIntro}>
 
             <span className={styles.label}>
-              EXPERTISE
+              {pt ? "EXPERTISE" : "EXPERTISE"}
             </span>
 
             <div className={styles.labelLine}></div>
 
             <h2 className={styles.expertiseTitle}>
-              Competências que
-              <br />
-              geram <span>valor.</span>
+              {pt ? (
+                <>
+                  Competências que
+                  <br />
+                  geram <span>valor.</span>
+                </>
+              ) : (
+                <>
+                  Skills that
+                  <br />
+                  create <span>value.</span>
+                </>
+              )}
             </h2>
 
             <p className={styles.expertiseDescription}>
-              Atuação end-to-end: da estratégia à entrega,
-              unindo análise crítica, tecnologia e visão
-              de negócio para impulsionar resultados.
+              {pt
+                ? "Atuação end-to-end: da estratégia à entrega, unindo análise crítica, tecnologia e visão de negócio para impulsionar resultados."
+                : "End-to-end expertise: from strategy to delivery, combining critical analysis, technology, and business vision to drive results."}
             </p>
 
           </div>
 
-       {/* CARDS */}
 
-<div className={styles.cards}>
+          {/* CARDS */}
 
-  {/* Business Intelligence */}
+          <div className={styles.cards}>
 
-  <div className={styles.card}>
+            {/* Business Intelligence */}
 
-    <div className={styles.icon}>
-      <BarChart3 size={42} />
-    </div>
+            <div className={styles.card}>
 
-    <h3>Business Intelligence</h3>
+              <div className={styles.icon}>
+                <BarChart3 size={42} />
+              </div>
 
-    <div className={styles.cardLine}></div>
+              <h3>Business Intelligence</h3>
 
-    <p>
-      Dashboards executivos e KPIs que direcionam
-      decisões estratégicas.
-    </p>
+              <div className={styles.cardLine}></div>
 
-  </div>
+              <p>
+                {pt
+                  ? "Dashboards executivos e KPIs que direcionam decisões estratégicas."
+                  : "Executive dashboards and KPIs that drive strategic decisions."}
+              </p>
 
-  {/* Data Analytics */}
+            </div>
 
-  <div className={styles.card}>
 
-    <div className={styles.icon}>
-      <TrendingUp size={42} />
-    </div>
+            {/* Data Analytics */}
 
-    <h3>Data   <br />Analytics</h3>
+            <div className={styles.card}>
 
-    <div className={styles.cardLine}></div>
+              <div className={styles.icon}>
+                <TrendingUp size={42} />
+              </div>
 
-    <p>
-      Análises profundas que transformam
-      dados em insights acionáveis.
-    </p>
+              <h3>
+                Data <br />Analytics
+              </h3>
 
-  </div>
+              <div className={styles.cardLine}></div>
 
-  {/* Artificial Intelligence */}
+              <p>
+                {pt
+                  ? "Análises profundas que transformam dados em insights acionáveis."
+                  : "Deep analysis that transforms data into actionable insights."}
+              </p>
 
-  <div className={styles.card}>
+            </div>
 
-    <div className={styles.icon}>
-      <BrainCircuit size={42} />
-    </div>
 
-    <h3>Artificial Intelligence</h3>
+            {/* Artificial Intelligence */}
 
-    <div className={styles.cardLine}></div>
+            <div className={styles.card}>
 
-    <p>
-      Aplicação de IA para previsão,
-      classificação e automação inteligente.
-    </p>
+              <div className={styles.icon}>
+                <BrainCircuit size={42} />
+              </div>
 
-  </div>
+              <h3>Artificial Intelligence</h3>
 
-  {/* Process Automation */}
+              <div className={styles.cardLine}></div>
 
-  <div className={styles.card}>
+              <p>
+                {pt
+                  ? "Aplicação de IA para previsão, classificação e automação inteligente."
+                  : "AI applications for prediction, classification, and intelligent automation."}
+              </p>
 
-    <div className={styles.icon}>
-      <Cog size={42} />
-    </div>
+            </div>
 
-    <h3>Process Automation</h3>
 
-    <div className={styles.cardLine}></div>
+            {/* Process Automation */}
 
-    <p>
-      Automação de processos e rotinas
-      para ganho de eficiência operacional.
-    </p>
+            <div className={styles.card}>
 
-  </div>
+              <div className={styles.icon}>
+                <Cog size={42} />
+              </div>
 
-  {/* Data Strategy */}
+              <h3>Process Automation</h3>
 
-  <div className={styles.card}>
+              <div className={styles.cardLine}></div>
 
-    <div className={styles.icon}>
-      <Target size={42} />
-    </div>
+              <p>
+                {pt
+                  ? "Automação de processos e rotinas para ganho de eficiência operacional."
+                  : "Process and routine automation to improve operational efficiency."}
+              </p>
 
-    <h3>Data   <br />Strategy</h3>
+            </div>
 
-    <div className={styles.cardLine}></div>
 
-    <p>
-      Estratégias de dados alinhadas
-      ao negócio e geração de valor.
-    </p>
+            {/* Data Strategy */}
 
-</div> {/* cards */}
- </div> {/* card */}
+            <div className={styles.card}>
 
-</div> {/* bottom */}
+              <div className={styles.icon}>
+                <Target size={42} />
+              </div>
 
-<div className={styles.divider}></div>
+              <h3>
+                Data <br />Strategy
+              </h3>
 
-<footer className={styles.footer}>
+              <div className={styles.cardLine}></div>
 
-  <p>© 2026 Ingrid Cernauski</p>
+              <p>
+                {pt
+                  ? "Estratégias de dados alinhadas ao negócio e geração de valor."
+                  : "Data strategies aligned with business goals and value creation."}
+              </p>
 
-  <span>
-    Business Intelligence • Data Strategy • AI
-  </span>
+            </div>
 
-</footer>
+          </div>
 
-</div> {/* container */}
+        </div>
 
-</section>
 
-);
+        <div className={styles.divider}></div>
+
+
+        <footer className={styles.footer}>
+
+          <p>© 2026 Ingrid Cernauski</p>
+
+          <span>
+            Business Intelligence • Data Strategy • AI
+          </span>
+
+        </footer>
+
+      </div>
+
+    </section>
+  );
 }

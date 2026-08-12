@@ -1,8 +1,10 @@
 import styles from "./Hero.module.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
 
 
 export default function Hero() {
+  const { language } = useLanguage();
   return (
     <section className={styles.hero}>
 
@@ -26,20 +28,24 @@ export default function Hero() {
           <div className={styles.line}></div>
 
           <h2 className={styles.subtitle}>
-            Um Framework de Business Intelligence.
-          </h2>
+  {language === "pt"
+    ? "Um Framework de Business Intelligence."
+    : "A Business Intelligence Framework."}
+</h2>
 
           <p className={styles.description}>
-            Transformando dados complexos em comunicação estratégica
-            que impulsiona decisões, conecta pessoas, negócios e
-            tecnologia através do Visual Storytelling.
-          </p>
+  {language === "pt"
+    ? "Transformando dados complexos em comunicação estratégica que impulsiona decisões, conecta pessoas, negócios e tecnologia através do Visual Storytelling."
+    : "Transforming complex data into strategic communication that drives decisions and connects people, business, and technology through Visual Storytelling."}
+</p>
 
          <Link
   to="/metodologia"
   className={styles.cta}
 >
-  Conheça meu trabalho →
+  {language === "pt"
+    ? "Conheça meu trabalho →"
+    : "Discover my work →"}
 </Link>
 
         </div>

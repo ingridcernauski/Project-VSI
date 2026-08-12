@@ -1,23 +1,41 @@
+
 import styles from "./projetos.module.css";
+import { useLanguage } from "../../context/LanguageContext";
+
 
 function Projetos() {
+  const { language } = useLanguage();
+
   return (
     <section className={styles.projectsSection}>
 
       <div className={styles.projectsContent}>
 
         <span className={styles.sectionLabel}>
-          COMING SOON
+          {language === "pt" ? "EM BREVE" : "COMING SOON"}
         </span>
 
+
         <h1>
-          Something new is <em>taking shape.</em>
+          {language === "pt" ? (
+            <>
+              Algo novo está <em>tomando forma.</em>
+            </>
+          ) : (
+            <>
+              Something new is <em>taking shape.</em>
+            </>
+          )}
         </h1>
+
 
         <span className={styles.projectsLine}></span>
 
+
         <p>
-          More coming soon.
+          {language === "pt"
+            ? "Mais novidades em breve."
+            : "More coming soon."}
         </p>
 
       </div>
@@ -25,5 +43,6 @@ function Projetos() {
     </section>
   );
 }
+
 
 export default Projetos;

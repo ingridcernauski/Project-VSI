@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar/Navbar";
@@ -6,46 +7,50 @@ import Metodologia from "./pages/metodologia/Metodologia";
 import Trajetoria from "./pages/trajetoria/Trajetoria";
 import Projetos from "./pages/projetos/projetos";
 import Contato from "./pages/contato/Contato";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
     <BrowserRouter>
 
-      <Navbar />
+  <LanguageProvider>
 
-      <Routes>
+    <Navbar />
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+    <Routes>
 
-        <Route
-          path="/metodologia"
-          element={<Metodologia />}
-        />
+      <Route
+        path="/"
+        element={<Home />}
+      />
 
-        <Route
-          path="/trajetoria"
-          element={<Trajetoria />}
-        />
+      <Route
+        path="/metodologia"
+        element={<Metodologia />}
+      />
 
-        <Route
-          path="/projetos"
-          element={<Projetos />}
-        />
+      <Route
+        path="/trajetoria"
+        element={<Trajetoria />}
+      />
 
-        <Route
-          path="/contato"
-          element={<Contato />}
-        />
+      <Route
+        path="/projetos"
+        element={<Projetos />}
+      />
 
-      </Routes>
+      <Route
+        path="/contato"
+        element={<Contato />}
+      />
 
-            <Analytics />
+    </Routes>
 
+    <Analytics />
 
-    </BrowserRouter>
+  </LanguageProvider>
+
+</BrowserRouter>
   );
 }
 

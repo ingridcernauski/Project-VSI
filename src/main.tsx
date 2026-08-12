@@ -7,6 +7,8 @@ import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/600.css";
 
+import { LanguageProvider } from "./context/LanguageContext";
+
 import "@fontsource/cormorant-garamond/300.css";
 import "@fontsource/cormorant-garamond/400.css";
 import "@fontsource/cormorant-garamond/500.css";
@@ -21,6 +23,8 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <LanguageProvider>
+  <App />
+</LanguageProvider>
   </React.StrictMode>
 );
