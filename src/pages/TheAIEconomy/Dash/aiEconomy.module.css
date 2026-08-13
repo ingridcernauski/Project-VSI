@@ -236,3 +236,50 @@
 
   color: #55555d;
 }
+
+.aiEconomy {
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboardHeader {
+  width: min(900px, 90%);
+  text-align: center;
+}
+
+.comingSoon {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  box-sizing: border-box;
+  padding: 80px 24px 40px;
+}
+
+.comingSoon .dashboardLabel {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.comingSoon h1 {
+  margin: 0;
+}
+
+.comingSoon p {
+  max-width: 600px;
+  margin: 24px auto;
+}
+
+.comingSoon strong {
+  display: block;
+  margin-top: 32px;
+}
