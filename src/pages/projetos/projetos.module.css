@@ -3,24 +3,20 @@
    ========================================================= */
 
 .projectsSection {
-  min-height: 70vh;
+  min-height: 80vh;
 
   display: flex;
-  align-items: center;
   justify-content: center;
 
-  padding: 100px 40px;
-
-  text-align: center;
+  padding: 120px 40px;
 }
+
 
 .projectsContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  max-width: 650px;
+  width: 100%;
+  max-width: 1100px;
 }
+
 
 
 /* =========================================================
@@ -28,7 +24,13 @@
    ========================================================= */
 
 .sectionLabel {
-  margin-bottom: 24px;
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 48px;
+
+  text-align: center;
 
   font-family: "Manrope", sans-serif;
 
@@ -41,56 +43,206 @@
 }
 
 
+
 /* =========================================================
-   TÍTULO
+   PROJECT GRID
    ========================================================= */
 
-.projectsContent h1 {
-  margin: 0;
+.projectsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  width: 100%;
+}
+
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.projectCard {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  border-top: 1px solid rgba(185, 138, 255, 0.35);
+  border-bottom: 1px solid rgba(185, 138, 255, 0.18);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.projectCard:hover {
+  background: rgba(185, 138, 255, 0.025);
+
+  border-top-color: #b98aff;
+}
+
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.projectNumber {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color: #666672;
+}
+
+
+
+/* =========================================================
+   PROJECT INFO
+   ========================================================= */
+
+.projectInfo {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.projectInfo h1 {
+  margin: 0 0 22px;
 
   font-family: "Manrope", sans-serif;
 
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 400;
 
-  line-height: 1.25;
+  line-height: 1;
+
+  letter-spacing: -1px;
 
   color: #f5f5f5;
 }
 
-.projectsContent h1 em {
+
+.projectInfo h1 em {
   font-style: normal;
+
   color: #b98aff;
 }
 
 
-/* =========================================================
-   LINHA
-   ========================================================= */
-
-.projectsLine {
-  width: 42px;
-  height: 1px;
-
-  margin: 30px 0;
-
-  background: #b98aff;
-}
-
-
-/* =========================================================
-   TEXTO
-   ========================================================= */
-
-.projectsContent p {
+.projectInfo p {
   margin: 0;
+
+  max-width: 280px;
 
   font-family: "Manrope", sans-serif;
 
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
 
-  letter-spacing: 1px;
+  line-height: 1.8;
 
   color: #8c8c96;
+}
+
+
+
+
+.projectTag {
+  margin-top: 18px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #b98aff;
+}
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.exploreButton {
+  align-self: flex-start;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #b98aff;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.exploreButton:hover {
+  color: #f5f5f5;
+
+  transform: translateX(4px);
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .projectsSection {
+    padding: 80px 24px;
+  }
+
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .projectCard {
+    min-height: 330px;
+
+    padding: 28px;
+  }
+
+
+  .projectInfo h1 {
+    font-size: 30px;
+  }
+
 }

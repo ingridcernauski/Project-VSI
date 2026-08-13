@@ -1,48 +1,62 @@
-
 import styles from "./projetos.module.css";
 import { useLanguage } from "../../context/LanguageContext";
-
 
 function Projetos() {
   const { language } = useLanguage();
 
   return (
     <section className={styles.projectsSection}>
-
       <div className={styles.projectsContent}>
 
         <span className={styles.sectionLabel}>
-          {language === "pt" ? "EM BREVE" : "COMING SOON"}
+          {language === "pt" ? "PROJETOS" : "PROJECTS"}
         </span>
 
+        <div className={styles.projectsGrid}>
 
-        <h1>
-          {language === "pt" ? (
-            <>
-              Algo novo está <em>tomando forma.</em>
-            </>
-          ) : (
-            <>
-              Something new is <em>taking shape.</em>
-            </>
-          )}
-        </h1>
+          {/* =====================================================
+              PROJETO 01 — THE AI ECONOMY
+              ===================================================== */}
 
+          <article className={styles.projectCard}>
 
-        <span className={styles.projectsLine}></span>
+            <span className={styles.projectNumber}>
+  01
+</span>
 
+<span className={styles.projectTag}>
+  ● POWER BI
+</span>
+            <div className={styles.projectInfo}>
 
-        <p>
-          {language === "pt"
-            ? "Mais novidades em breve."
-            : "More coming soon."}
-        </p>
+              <h1>
+                THE AI <em>ECONOMY</em>
+              </h1>
+
+              <p>
+                {language === "pt"
+                  ? "Como a inteligência artificial está transformando pessoas, trabalho e mercados."
+                  : "How artificial intelligence is changing people, work and markets."}
+              </p>
+
+            </div>
+
+            <a
+              href="/projects/the-ai-economy/study-case"
+              className={styles.exploreButton}
+            >
+              {language === "pt"
+                ? "EXPLORAR DADOS →"
+                : "EXPLORE DATA →"}
+            </a>
+
+          </article>
+
+        </div>
 
       </div>
-
     </section>
   );
 }
-
 
 export default Projetos;

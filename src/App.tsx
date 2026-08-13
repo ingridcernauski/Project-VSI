@@ -7,6 +7,9 @@ import Metodologia from "./pages/metodologia/Metodologia";
 import Trajetoria from "./pages/trajetoria/Trajetoria";
 import Projetos from "./pages/projetos/projetos";
 import Contato from "./pages/contato/Contato";
+import StudyCase from "./pages/TheAIEconomy/studyCase/StudyCase";
+import AIEconomy from "./pages/TheAIEconomy/Dash/AIEconomy";
+
 import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
@@ -38,6 +41,16 @@ function App() {
         path="/projetos"
         element={<Projetos />}
       />
+
+       <Route
+  path="/projects/the-ai-economy/study-case"
+  element={<StudyCase />}
+/>
+
+<Route
+  path="/projects/the-ai-economy/dash"
+  element={<AIEconomy />}
+/>
 
       <Route
         path="/contato"
