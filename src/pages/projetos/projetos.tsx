@@ -1,5 +1,6 @@
 import styles from "./projetos.module.css";
 import { useLanguage } from "../../context/LanguageContext";
+import { Link } from "react-router-dom";
 
 function Projetos() {
   const { language } = useLanguage();
@@ -41,14 +42,14 @@ function Projetos() {
 
             </div>
 
-            <a
-              href="/projects/the-ai-economy/study-case"
-              className={styles.exploreButton}
-            >
-              {language === "pt"
-                ? "EXPLORAR DADOS →"
-                : "EXPLORE DATA →"}
-            </a>
+            <Link
+  to="/projects/the-ai-economy/study-case"
+  className={styles.exploreButton}
+>
+  {language === "pt"
+    ? "EXPLORAR DADOS →"
+    : "EXPLORE DATA →"}
+</Link>
 
           </article>
 
