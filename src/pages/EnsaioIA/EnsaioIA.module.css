@@ -1,0 +1,1601 @@
+/* =========================================================
+   ENSAIO SOBRE INTELIGÊNCIA ARTIFICIAL
+   ========================================================= */
+
+.essayPage {
+  min-height: 100vh;
+  color: #f5f5f5;
+  font-family: "Manrope", sans-serif;
+  padding-top: 72px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(185, 138, 255, 0.10) 0%,
+      rgba(185, 138, 255, 0.045) 22%,
+      transparent 52%
+    ),
+    radial-gradient(
+      circle at 85% 42%,
+      rgba(185, 138, 255, 0.035) 0%,
+      transparent 32%
+    ),
+    #000;
+
+  background-attachment: fixed;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: min(1400px, calc(100% - 80px));
+  min-height: 58vh;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 65px 0 50px;
+
+  box-sizing: border-box;
+}
+
+
+.eyebrow {
+  margin-bottom: 20px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: #b98aff;
+}
+
+
+.hero h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-size: clamp(21px, 2.4vw, 31px);
+  font-weight: 400;
+
+  line-height: 1.18;
+  letter-spacing: -1px;
+
+  color: #f5f5f5;
+}
+
+
+.hero h1 em {
+  font-style: normal;
+  color: #b98aff;
+}
+
+
+.heroLine {
+  width: 90px;
+  height: 1px;
+
+  margin: 30px 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b98aff,
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+
+.heroQuestion {
+  text-align: center;
+}
+
+
+.questionLabel {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #696971;
+}
+
+
+.heroQuestion h2 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  letter-spacing: -0.5px;
+
+  color: #d8c5ff;
+}
+
+
+.heroQuestion p {
+  margin: 7px 0 0;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: #686871;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.introduction {
+  position: relative;
+
+  width: min(1400px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  min-height: 240px;
+
+  box-sizing: border-box;
+
+  padding: 38px 0 45px;
+
+  display: grid;
+
+  grid-template-columns: 70px minmax(0, 760px) 1fr;
+
+  column-gap: 35px;
+
+  align-items: start;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.chapterNumber {
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #b98aff;
+}
+
+
+.introductionContent {
+  max-width: 760px;
+}
+
+
+.introductionContent p {
+  margin: 0 0 16px;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #85858e;
+}
+
+
+.introductionContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   INTRO VISUAL — MAIOR
+   ========================================================= */
+
+.introVisual {
+  position: relative;
+
+  height: 190px;
+
+  margin-top: -10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.visualBigText {
+  position: relative;
+  z-index: 2;
+
+  font-size: 92px;
+
+  font-weight: 300;
+
+  letter-spacing: -8px;
+
+  color: rgba(185, 138, 255, 0.14);
+}
+
+.visualSmallText {
+  position: absolute;
+
+  right: 10%;
+  top: 17%;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #6d5a87;
+}
+
+.visualGrid {
+  position: absolute;
+
+  width: 240px;
+  height: 165px;
+
+  background-image:
+    linear-gradient(
+      rgba(185, 138, 255, 0.11) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(185, 138, 255, 0.11) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+
+  mask-image: radial-gradient(
+    circle,
+    black 0%,
+    transparent 72%
+  );
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   VISUAIS DOS CAPÍTULOS — MAIORES
+   ========================================================= */
+
+.chapterVisual {
+  position: relative;
+
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-left: 1px solid rgba(185, 138, 255, 0.13);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HOMO SAPIENS — MAIOR
+   ========================================================= */
+
+.visualWord {
+  position: absolute;
+
+  top: 38%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: clamp(52px, 6vw, 86px);
+
+  font-weight: 300;
+
+  letter-spacing: -5px;
+
+  color: rgba(185, 138, 255, 0.15);
+}
+
+.visualSubword {
+  position: absolute;
+
+  top: 59%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  color: #756686;
+}
+
+.visualLine1 {
+  width: 310px;
+}
+
+.visualLine2 {
+  width: 250px;
+
+  transform: rotate(28deg);
+}
+
+.visualLine3 {
+  width: 250px;
+
+  transform: rotate(-28deg);
+}
+
+.visualDot {
+  width: 7px;
+  height: 7px;
+}
+
+
+/* =========================================================
+   KNOWLEDGE VISUAL — MAIOR
+   ========================================================= */
+
+.timelineVisual {
+  width: 270px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  transform: scale(1.12);
+}
+
+.timelineVisual span,
+.timelineVisual strong {
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #686871;
+}
+
+.timelineVisual strong {
+  color: #b98aff;
+}
+
+.timelineVisual i {
+  display: block;
+
+  width: 1px;
+
+  height: 25px;
+
+  margin-left: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(185, 138, 255, 0.6),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   TWO WORLDS — MAIOR
+   ========================================================= */
+
+.worldVisual {
+  position: relative;
+
+  width: 320px;
+  height: 230px;
+
+  transform: scale(1.05);
+}
+
+.analog,
+.ai {
+  font-size: 10px;
+
+  letter-spacing: 3.5px;
+}
+
+.worldCircle {
+  width: 110px;
+  height: 110px;
+}
+
+.worldCircle::after {
+  inset: 18px;
+}
+
+
+/* =========================================================
+   CINEMA VISUAL — MAIOR
+   ========================================================= */
+
+.cinemaVisual {
+  width: 320px;
+
+  transform: scale(1.08);
+}
+
+.cinemaScreen {
+  width: 270px;
+  height: 180px;
+
+  padding-left: 30px;
+
+  gap: 12px;
+}
+
+.cinemaScreen span {
+  font-size: 10px;
+
+  letter-spacing: 3.5px;
+}
+
+.cinemaLine {
+  width: 270px;
+
+  margin-top: 18px;
+}
+
+.cinemaCaption {
+  margin-top: 11px;
+
+  font-size: 8px;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   QUESTION VISUAL — MAIOR
+   ========================================================= */
+
+.questionVisual {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform: scale(1.05);
+}
+
+.questionMark {
+  font-size: 125px;
+}
+
+.questionOrbit {
+  width: 235px;
+  height: 130px;
+
+  border: 1px solid rgba(185, 138, 255, 0.25);
+
+  border-radius: 50%;
+
+  transform: rotate(-28deg);
+}
+
+.questionOrbitDot {
+  width: 8px;
+  height: 8px;
+
+  top: 38px;
+  right: 25px;
+}
+
+
+/* =========================================================
+   FINAL VISUAL — MAIOR
+   ========================================================= */
+
+.finalVisual {
+  position: relative;
+
+  width: 320px;
+
+  min-height: 230px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform: scale(1.08);
+}
+
+.finalWord {
+  font-size: 38px;
+
+  letter-spacing: 6px;
+}
+
+.finalWordAI {
+  margin-top: 5px;
+
+  font-size: 20px;
+
+  letter-spacing: 5px;
+}
+
+.finalLine {
+  width: 190px;
+
+  margin: 25px 0 14px;
+}
+
+.finalCaption {
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   CHAPTER
+   ========================================================= */
+
+.chapter,
+.questionChapter,
+.conclusion {
+  width: min(1400px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 52px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.chapterHeader {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+
+.chapterLabel {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.6px;
+
+  color: #6f6f78;
+}
+
+
+/* =========================================================
+   LAYOUT — TEXTO + VISUAL
+   ========================================================= */
+
+.chapterLayout {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+
+  column-gap: 80px;
+
+  align-items: center;
+
+  min-height: 230px;
+}
+
+
+.chapterBody {
+  padding-left: 90px;
+}
+
+
+.chapterBody h2 {
+  max-width: 760px;
+
+  margin: 0 0 28px;
+
+  font-size: clamp(21px, 2.2vw, 30px);
+
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.8px;
+
+  color: #f5f5f5;
+}
+
+
+.textColumn {
+  max-width: 680px;
+}
+
+
+.textColumn p {
+  margin: 0 0 17px;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  color: #85858e;
+}
+
+
+.textColumn p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CHAPTER VISUAL — BASE
+   ========================================================= */
+
+.chapterVisual {
+  position: relative;
+
+  min-height: 230px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-left: 1px solid rgba(185, 138, 255, 0.10);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HOMO SAPIENS VISUAL
+   ========================================================= */
+
+.visualWord {
+  position: absolute;
+
+  top: 38%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: clamp(38px, 5vw, 66px);
+
+  font-weight: 300;
+
+  letter-spacing: -4px;
+
+  color: rgba(185, 138, 255, 0.13);
+}
+
+
+.visualSubword {
+  position: absolute;
+
+  top: 59%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  color: #756686;
+}
+
+
+.visualLine {
+  position: absolute;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(185, 138, 255, 0.55),
+    transparent
+  );
+}
+
+
+.visualLine1 {
+  width: 230px;
+  transform: rotate(0deg);
+}
+
+
+.visualLine2 {
+  width: 180px;
+  transform: rotate(28deg);
+}
+
+
+.visualLine3 {
+  width: 180px;
+  transform: rotate(-28deg);
+}
+
+
+.visualDot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #b98aff;
+
+  box-shadow:
+    0 0 12px rgba(185, 138, 255, 0.5);
+}
+
+
+.visualDot1 {
+  top: 25%;
+  left: 28%;
+}
+
+
+.visualDot2 {
+  top: 68%;
+  left: 72%;
+}
+
+
+.visualDot3 {
+  top: 30%;
+  right: 20%;
+}
+
+
+/* =========================================================
+   KNOWLEDGE TIMELINE
+   ========================================================= */
+
+.knowledgeTimeline {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px 16px;
+
+  max-width: 850px;
+
+  margin: 0 0 28px;
+
+  padding: 15px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.knowledgeTimeline span {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.7px;
+
+  color: #8f8f99;
+}
+
+
+.knowledgeTimeline span:not(:last-child)::after {
+  content: "·";
+
+  margin-left: 16px;
+
+  color: #b98aff;
+}
+
+
+/* =========================================================
+   KNOWLEDGE VISUAL
+   ========================================================= */
+
+.timelineVisual {
+  width: 210px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+
+.timelineVisual span,
+.timelineVisual strong {
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #686871;
+}
+
+
+.timelineVisual strong {
+  color: #b98aff;
+}
+
+
+.timelineVisual i {
+  display: block;
+
+  width: 1px;
+  height: 18px;
+
+  margin-left: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(185, 138, 255, 0.5),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   TWO WORLDS VISUAL
+   ========================================================= */
+
+.worldVisual {
+  position: relative;
+
+  width: 250px;
+  height: 180px;
+}
+
+
+.analog,
+.ai {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.analog {
+  left: 0;
+
+  color: #55555d;
+}
+
+
+.ai {
+  right: 0;
+
+  color: #b98aff;
+}
+
+
+.worldDivider {
+  position: absolute;
+
+  left: 50%;
+  top: 20%;
+
+  width: 1px;
+  height: 60%;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(185, 138, 255, 0.65),
+    transparent
+  );
+}
+
+
+.worldCircle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 80px;
+  height: 80px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(185, 138, 255, 0.18);
+
+  border-radius: 50%;
+}
+
+
+.worldCircle::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 14px;
+
+  border: 1px solid rgba(185, 138, 255, 0.12);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CINEMA
+   ========================================================= */
+
+.cinemaChapter {
+  padding-bottom: 60px;
+}
+
+
+.filmList {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 0;
+
+  max-width: 900px;
+}
+
+
+.filmList article {
+  min-height: 115px;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.filmList article:nth-child(3n) {
+  border-right: none;
+}
+
+/* 07 — centralizado na última linha */
+.filmList article:last-child {
+  grid-column: 2;
+  border-right: none;
+}
+
+
+.filmList article:nth-child(2n) {
+  border-right: none;
+}
+
+
+.filmList article span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color: #b98aff;
+}
+
+
+.filmList h3 {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+
+  color: #d8d8df;
+}
+
+
+.filmList p {
+  max-width: 330px;
+
+  margin: 9px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  color: #686871;
+}
+
+
+/* =========================================================
+   CINEMA VISUAL
+   ========================================================= */
+
+.cinemaVisual {
+  width: 260px;
+}
+
+
+.cinemaScreen {
+  position: relative;
+
+  width: 220px;
+  height: 145px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding-left: 25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(185, 138, 255, 0.14);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(185, 138, 255, 0.035),
+      transparent
+    );
+}
+
+
+.cinemaScreen span {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #6d6675;
+}
+
+
+.cinemaScreen span:last-child {
+  color: #b98aff;
+}
+
+
+.cinemaLine {
+  width: 220px;
+
+  height: 1px;
+
+  margin-top: 14px;
+
+  background: rgba(185, 138, 255, 0.25);
+}
+
+
+.cinemaCaption {
+  display: block;
+
+  margin-top: 9px;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color: #55555d;
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+.questionChapter {
+  padding-top: 55px;
+  padding-bottom: 60px;
+}
+
+
+.questionContent {
+  padding-left: 90px;
+}
+
+
+.questionContent h2 {
+  max-width: 800px;
+
+  margin: 0 0 32px;
+
+  font-size: clamp(23px, 2.7vw, 35px);
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  letter-spacing: -1px;
+
+  color: #f5f5f5;
+}
+
+
+.questionsList {
+  max-width: 720px;
+}
+
+
+.questionsList p {
+  margin: 0;
+
+  padding: 16px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #85858e;
+}
+
+
+.questionsList p:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   QUESTION VISUAL
+   ========================================================= */
+
+.questionVisual {
+  position: relative;
+
+  width: 220px;
+  height: 220px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.questionMark {
+  position: relative;
+  z-index: 2;
+
+  font-size: 92px;
+
+  font-weight: 200;
+
+  color: rgba(185, 138, 255, 0.15);
+}
+
+
+.questionOrbit {
+  position: absolute;
+
+  width: 175px;
+  height: 95px;
+
+  border: 1px solid rgba(185, 138, 255, 0.22);
+
+  border-radius: 50%;
+
+  transform: rotate(-28deg);
+}
+
+
+.questionOrbitDot {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  top: 30px;
+  right: 20px;
+
+  border-radius: 50%;
+
+  background: #b98aff;
+
+  box-shadow:
+    0 0 15px rgba(185, 138, 255, 0.65);
+}
+
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.conclusion {
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
+
+
+.conclusionContent {
+  padding-left: 90px;
+
+  max-width: 800px;
+}
+
+
+.conclusionContent h2 {
+  margin: 0 0 25px;
+
+  font-size: clamp(28px, 3.5vw, 48px);
+
+  font-weight: 400;
+
+  letter-spacing: -1.5px;
+
+  color: #f5f5f5;
+}
+
+
+.conclusionContent p {
+  max-width: 680px;
+
+  margin: 0 0 17px;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  color: #85858e;
+}
+
+
+.conclusionContent .finalStatement {
+  margin-top: 28px;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+
+  color: #d8c5ff;
+}
+
+
+/* =========================================================
+   FINAL VISUAL
+   ========================================================= */
+
+.finalVisual {
+  position: relative;
+
+  width: 260px;
+  min-height: 180px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.finalWord {
+  font-size: 28px;
+
+  font-weight: 300;
+
+  letter-spacing: 5px;
+
+  color: rgba(255, 255, 255, 0.14);
+}
+
+
+.finalWordAI {
+  margin-top: 4px;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  color: #b98aff;
+}
+
+
+.finalLine {
+  width: 150px;
+
+  height: 1px;
+
+  margin: 22px 0 12px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b98aff,
+    transparent
+  );
+}
+
+
+.finalCaption {
+  font-size: 7px;
+
+  letter-spacing: 2.5px;
+
+  color: #55555d;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.essayFooter {
+  width: min(1400px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 20px 0 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #55555d;
+}
+
+
+.essayFooter strong {
+  font-weight: 600;
+
+  color: #696971;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .chapterLayout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+
+    column-gap: 45px;
+  }
+
+  .chapterBody,
+  .questionContent,
+  .conclusionContent {
+    padding-left: 50px;
+  }
+
+  .introduction {
+    grid-template-columns: 55px minmax(0, 1fr) 240px;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .essayPage {
+    padding-top: 68px;
+  }
+
+
+  .hero,
+  .introduction,
+  .chapter,
+  .questionChapter,
+  .conclusion,
+  .essayFooter {
+    width: calc(100% - 48px);
+  }
+
+
+  .introduction {
+    grid-template-columns: 50px 1fr;
+  }
+
+
+  .introVisual {
+    display: none;
+  }
+
+
+  .chapterLayout {
+    grid-template-columns: 1fr;
+
+    row-gap: 35px;
+  }
+
+
+  .chapterBody,
+  .questionContent,
+  .conclusionContent {
+    padding-left: 0;
+  }
+
+
+  .chapterVisual {
+    min-height: 180px;
+
+    border-left: none;
+
+    border-top: 1px solid rgba(185, 138, 255, 0.08);
+  }
+
+
+  .filmList {
+    grid-template-columns: 1fr;
+  }
+
+
+  .filmList article {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+
+  .filmList article:last-child {
+    border-bottom: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .essayPage {
+    padding-top: 64px;
+  }
+
+
+  .hero {
+    min-height: 68vh;
+
+    padding: 45px 0;
+  }
+
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+
+  .heroQuestion h2 {
+    font-size: 19px;
+  }
+
+
+  .introduction {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 30px 0;
+  }
+
+
+  .chapter,
+  .questionChapter,
+  .conclusion {
+    padding: 45px 0;
+  }
+
+
+  .chapterHeader {
+    gap: 14px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .chapterLabel {
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .chapterBody h2 {
+    font-size: 22px;
+  }
+
+
+  .questionContent h2 {
+    font-size: 27px;
+  }
+
+
+  .chapterVisual {
+    min-height: 160px;
+  }
+
+
+  .visualWord {
+    font-size: 48px;
+  }
+
+
+  .essayFooter {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+}

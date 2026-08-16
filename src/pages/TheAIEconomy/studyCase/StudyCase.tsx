@@ -282,6 +282,149 @@ import { useNavigate } from "react-router-dom";
 </div>
 
 </div>
+{/* =====================================================
+    05 — PRINCIPAIS INSIGHTS
+    ===================================================== */}
+
+<section className={styles.conclusionSection}>
+
+  <div className={styles.conclusionHeader}>
+
+    <div className={styles.conclusionHeaderLabel}>
+
+      <span className={styles.conclusionNumber}>
+        05
+      </span>
+
+      <span className={styles.conclusionLabel}>
+        {language === "pt"
+          ? "PRINCIPAIS INSIGHTS"
+          : "KEY INSIGHTS"}
+      </span>
+
+    </div>
+
+    <h2>
+      {language === "pt"
+        ? <>O que os dados <em>revelam?</em></>
+        : <>What does the data <em>reveal?</em></>}
+    </h2>
+
+    <p>
+      {language === "pt"
+        ? "Os dados mostram que o impacto da inteligência artificial já ultrapassa a adoção de ferramentas e começa a transformar pessoas, trabalho e mercados."
+        : "The data shows that the impact of artificial intelligence is moving beyond tool adoption and beginning to transform people, work and markets."}
+    </p>
+
+  </div>
+
+
+  <div className={styles.insightGrid}>
+
+    <article className={styles.insightCard}>
+
+    
+
+    <span className={styles.insightNumber}>
+  01
+</span>
+
+<strong className={styles.insightValue}>
+  70%
+</strong>
+
+<h3>
+  {language === "pt"
+    ? "A IA JÁ FAZ PARTE DA VIDA COTIDIANA"
+    : "AI IS ALREADY PART OF EVERYDAY LIFE"}
+</h3>
+
+<p>
+  {language === "pt"
+    ? "A maior parte do uso do ChatGPT acontece fora do ambiente de trabalho."
+    : "Most ChatGPT usage happens outside the workplace."}
+</p>
+
+    </article>
+
+
+    <article className={styles.insightCard}>
+
+     <span className={styles.insightNumber}>
+  02
+</span>
+
+<strong className={styles.insightValue}>
+  ~40%
+</strong>
+
+<h3>
+  {language === "pt"
+    ? "O TRABALHO ESTÁ SENDO RECONFIGURADO"
+    : "WORK IS BEING RECONFIGURED"}
+</h3>
+
+<p>
+  {language === "pt"
+    ? "Uma parcela significativa do emprego global está exposta à IA generativa."
+    : "A significant share of global employment is exposed to generative AI."}
+</p>
+    </article>
+
+
+    <article className={styles.insightCard}>
+
+      <span className={styles.insightNumber}>
+  03
+</span>
+
+<strong className={styles.insightValue}>
+  US$ 252,3 bi
+</strong>
+
+<h3>
+  {language === "pt"
+    ? "CAPITAL ESTÁ ACELERANDO A TRANSFORMAÇÃO"
+    : "CAPITAL IS ACCELERATING TRANSFORMATION"}
+</h3>
+
+<p>
+  
+  {language === "pt"
+    ? "O volume de investimento privado mostra que a IA já ocupa um papel estratégico na economia global."
+    : "The volume of private investment shows that AI already plays a strategic role in the global economy."}
+</p>
+
+    </article>
+
+
+    <article className={styles.insightCard}>
+
+      <span className={styles.insightNumber}>
+  04
+</span>
+
+<strong className={styles.insightValue}>
+  +239%
+</strong>
+
+<h3>
+  {language === "pt"
+    ? "A ADOÇÃO CONTINUA ACELERANDO"
+    : "ADOPTION CONTINUES TO ACCELERATE"}
+</h3>
+
+<p>
+  {language === "pt"
+    ? "O número projetado de usuários diários de IA cresce fortemente entre 2020 e 2025."
+    : "Projected daily AI users grow sharply between 2020 and 2025."}
+</p>
+
+    </article>
+
+  </div>
+
+</section>
 
 <footer className={styles.footer}>
 

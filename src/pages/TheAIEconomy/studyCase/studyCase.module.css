@@ -1226,3 +1226,392 @@
 
   letter-spacing: 2px;
 }
+
+/* =========================================================
+   05 — PRINCIPAIS INSIGHTS
+   ========================================================= */
+
+.conclusionSection {
+  width: min(1280px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 50px 0 70px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.conclusionHeader {
+  width: 100%;
+
+  margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   05 — PRINCIPAIS INSIGHTS
+   ========================================================= */
+
+.conclusionHeaderLabel {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin-bottom: 42px;
+}
+
+
+.conclusionNumber {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #b98aff;
+}
+
+
+.conclusionLabel {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #6f6f78;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+.conclusionHeader h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(26px, 3vw, 36px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+
+  color: #f5f5f5;
+}
+
+.conclusionHeader h2 em {
+  font-style: normal;
+
+  color: #b98aff;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.conclusionHeader p {
+  max-width: 850px;
+
+  margin: 24px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #85858e;
+}
+
+
+/* =========================================================
+   INSIGHT GRID
+   ========================================================= */
+
+.insightGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   INSIGHT CARD
+   ========================================================= */
+
+.insightCard {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 220px;
+
+  box-sizing: border-box;
+
+  padding: 18px 24px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: transparent;
+
+  overflow: hidden;
+}
+
+
+.insightCard:last-child {
+  border-right: none;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.insightNumber {
+  display: block;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 2px;
+
+  color: #b98aff;
+}
+
+
+/* =========================================================
+   VALUE
+   ========================================================= */
+
+.insightValue {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+
+background: linear-gradient(
+  90deg,
+  #d8d0e8 0%,
+  #b98aff 35%,
+  #9b6de8 100%
+);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.insightCard h3 {
+  margin: 13px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  color: rgba(245, 245, 245, 0.78);
+
+  min-height: 40px;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.insightCard p {
+  margin: auto 0 0;
+
+  padding-top: 20px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  color: #686871;
+}
+
+
+/* =========================================================
+   SUBTLE GLOW
+   ========================================================= */
+
+.insightCard::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -50px;
+  bottom: -50px;
+
+  background: rgba(185, 138, 255, 0.08);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .conclusionSection {
+    width: calc(100% - 48px);
+
+    padding: 50px 0 55px;
+  }
+
+
+  .conclusionHeaderLabel {
+    gap: 22px;
+
+    margin-bottom: 38px;
+  }
+
+
+  .conclusionHeader h2 {
+    font-size: 26px;
+  }
+
+
+  .conclusionHeader p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .insightGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .insightCard {
+    min-height: 210px;
+
+    padding: 16px 18px;
+  }
+
+
+  .insightCard:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .insightCard:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+
+  .insightValue {
+    font-size: 27px;
+
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .conclusionSection {
+    width: calc(100% - 40px);
+  }
+
+
+  .conclusionHeaderLabel {
+    gap: 18px;
+  }
+
+
+  .conclusionLabel {
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .conclusionHeader h2 {
+    font-size: 24px;
+  }
+
+
+  .insightCard {
+    min-height: 205px;
+
+    padding: 15px;
+  }
+
+
+  .insightValue {
+    font-size: 24px;
+  }
+
+
+  .insightCard h3 {
+    font-size: 9px;
+  }
+
+
+  .insightCard p {
+    font-size: 10px;
+  }
+
+}

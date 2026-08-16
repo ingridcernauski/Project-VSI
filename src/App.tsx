@@ -9,6 +9,7 @@ import Projetos from "./pages/projetos/projetos";
 import Contato from "./pages/contato/Contato";
 import StudyCase from "./pages/TheAIEconomy/studyCase/StudyCase";
 import AIEconomy from "./pages/TheAIEconomy/Dash/AIEconomy";
+import EnsaioIA from "./pages/EnsaioIA/EnsaioIA";
 
 import { LanguageProvider } from "./context/LanguageContext";
 
@@ -56,6 +57,11 @@ function App() {
         path="/contato"
         element={<Contato />}
       />
+
+      <Route
+  path="/projects/ensaio-ia"
+  element={<EnsaioIA />}
+/>
 
     </Routes>
 

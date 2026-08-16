@@ -22,12 +22,13 @@ function Projetos() {
           <article className={styles.projectCard}>
 
             <span className={styles.projectNumber}>
-  01
-</span>
+              01
+            </span>
 
-<span className={styles.projectTag}>
-  ● POWER BI
-</span>
+            <span className={styles.projectTag}>
+              ● POWER BI
+            </span>
+
             <div className={styles.projectInfo}>
 
               <h1>
@@ -43,13 +44,53 @@ function Projetos() {
             </div>
 
             <Link
-  to="/projects/the-ai-economy/study-case"
-  className={styles.exploreButton}
->
-  {language === "pt"
-    ? "EXPLORAR DADOS →"
-    : "EXPLORE DATA →"}
-</Link>
+              to="/projects/the-ai-economy/study-case"
+              className={styles.exploreButton}
+            >
+              {language === "pt"
+                ? "EXPLORAR DADOS →"
+                : "EXPLORE DATA →"}
+            </Link>
+
+          </article>
+
+
+          {/* =====================================================
+              PROJETO 02 — ENSAIO SOBRE INTELIGÊNCIA ARTIFICIAL
+              ===================================================== */}
+
+          <article className={styles.projectCard}>
+
+            <span className={styles.projectNumber}>
+              02
+            </span>
+
+            <span className={styles.projectTag}>
+              ● ENSAIO
+            </span>
+
+            <div className={styles.projectInfo}>
+
+              <h1>
+                O QUE É <em>NOSSO?</em>
+              </h1>
+
+              <p>
+                {language === "pt"
+                  ? "Uma geração entre o analógico e a inteligência artificial."
+                  : "A generation between the analog world and artificial intelligence."}
+              </p>
+
+            </div>
+
+            <Link
+              to="/projects/ensaio-ia"
+              className={styles.exploreButton}
+            >
+              {language === "pt"
+                ? "LER ENSAIO →"
+                : "READ ESSAY →"}
+            </Link>
 
           </article>
 

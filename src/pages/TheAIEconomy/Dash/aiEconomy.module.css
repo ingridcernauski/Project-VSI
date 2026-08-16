@@ -1,13 +1,60 @@
 .aiEconomy {
   min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
 
-  background: #000;
-
+  background: #050505;
   color: #f5f5f5;
 
-  padding: 48px 40px 40px;
+  padding: 128px 32px 40px;
 
   font-family: "Manrope", sans-serif;
+}
+
+
+/* =========================================================
+   DASHBOARD FRAME
+   ========================================================= */
+
+.dashboardFrame {
+  width: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 32px 20px 20px;
+
+  border: 1px solid rgba(185, 138, 255, 0.38);
+  border-radius: 8px;
+
+  background-color: #0d0d10;
+
+  background-image:
+    radial-gradient(
+      circle at 8% 0%,
+      rgba(185, 138, 255, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    100% 100%,
+    40px 40px,
+    40px 40px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.45);
+
+  overflow: hidden;
 }
 
 
@@ -16,47 +63,52 @@
    ========================================================= */
 
 .dashboardHeader {
-  width: min(1280px, 100%);
+  width: 100%;
 
-  margin: 0 auto 34px;
+  margin: 0 auto 24px;
 
   display: flex;
-
   align-items: flex-end;
   justify-content: space-between;
 }
 
-
-.dashboardLabel {
+.eyebrow {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
-  font-size: 9px;
+  font-size: 18px;
+  font-weight: 500;
 
-  font-weight: 600;
-
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
 
   color: #b98aff;
 }
 
+.economyAccent {
+  color: #b98aff;
+}
 
 .dashboardHeader h1 {
   margin: 0;
 
-  font-size: clamp(30px, 3vw, 44px);
-
+  font-size: 30px;
   font-weight: 400;
 
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
+
+  color: #f5f5f5;
 }
 
+.headerContext {
+  padding-bottom: 4px;
 
-.dashboardHeader h1 em {
-  font-style: normal;
+  font-size: 10px;
+  font-weight: 600;
 
-  color: #b98aff;
+  letter-spacing: 2px;
+
+  color: #9a9aa3;
 }
 
 
@@ -65,116 +117,191 @@
    ========================================================= */
 
 .kpiGrid {
-  width: min(1280px, 100%);
+  width: 100%;
 
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
 
-  border-top: 1px solid rgba(255,255,255,.08);
-
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 
 .kpiCard {
-  min-height: 105px;
+  min-height: 112px;
 
-  padding: 18px 22px;
+  padding: 18px 24px;
+
+  box-sizing: border-box;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
-  border-right: 1px solid rgba(255,255,255,.08);
+  position: relative;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.kpiIcon {
+  position: absolute;
+
+  top: 20px;
+  right: 18px;
+
+  width: 30px;
+  height: 30px;
+
+  color: #e8e0f5;
+
+  opacity: 0.85;
+
+  stroke-width: 1.7;
+}
 
 .kpiCard:last-child {
   border-right: none;
 }
 
-
-.kpiCard strong {
-  font-size: 25px;
-
+.kpiValue {
+  font-size: 32px;
   font-weight: 500;
 
-  letter-spacing: -1px;
+  line-height: 1;
+
+  letter-spacing: -1.2px;
 
   color: #f5f5f5;
 }
+.kpiValueHighlight {
+  color: #9be89b;
+}
+.kpiLabel {
+  margin-top: 10px;
 
-
-.kpiCard span {
-  margin-top: 8px;
-
-  font-size: 8px;
-
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 2px;
 
-  color: #686871;
+  color: #85858d;
+}
+
+.kpiMeta {
+  margin-top: 6px;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  color: #6c6c73;
 }
 
 
 /* =========================================================
-   CHART GRIDS
+   MAIN GRID
    ========================================================= */
 
-.mainGrid,
-.bottomGrid {
-  width: min(1280px, 100%);
+.mainGrid {
+  width: 100%;
 
   margin: 18px auto 0;
 
   display: grid;
 
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: 2fr 1fr;
 
   gap: 18px;
 }
 
 
-.bottomGrid {
-  margin-top: 18px;
+/* =========================================================
+   PEOPLE GRID
+   ========================================================= */
+
+.peopleGrid {
+  width: 100%;
+
+  margin: 18px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1.65fr 1fr;
+
+  gap: 18px;
 }
 
 
 /* =========================================================
-   CHART CARD
+   SECONDARY GRID
    ========================================================= */
 
-.chartCard {
-  min-height: 310px;
+.secondaryGrid {
+  width: 100%;
 
-  border: 1px solid rgba(255,255,255,.08);
+  margin: 18px auto 0;
 
-  background: rgba(255,255,255,.012);
+  display: grid;
 
-  padding: 22px 24px;
+  grid-template-columns: 1.65fr 1fr;
+
+  gap: 18px;
 }
 
 
-.chartHeader {
+/* =========================================================
+   VISUAL CARDS
+   ========================================================= */
+
+.visualCard,
+.fullWidthCard {
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.012);
+
+  padding: 20px 22px;
+}
+
+.visualCard {
+  min-height: 300px;
+}
+
+.fullWidthCard {
+  width: 100%;
+  max-width: 1840px;
+
+  margin: 18px auto 0;
+}
+
+
+/* =========================================================
+   VISUAL HEADER
+   ========================================================= */
+
+.visualHeader {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 
-  align-items: center;
+  min-height: 38px;
 
-  gap: 14px;
+  margin-bottom: 12px;
 
-  margin-bottom: 20px;
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.visualEyebrow {
+  display: block;
 
-.chartHeader span {
-  font-size: 8px;
+  margin-bottom: 6px;
 
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 2px;
@@ -182,104 +309,3357 @@
   color: #b98aff;
 }
 
-
-.chartHeader h2 {
+.visualHeader h2 {
   margin: 0;
 
-  font-size: 11px;
-
+  font-size: 13px;
   font-weight: 600;
 
-  letter-spacing: 1.8px;
-
-  color: #d8d8de;
+  letter-spacing: 1.5px;
 
   text-transform: uppercase;
+
+  color: #d8d8de;
 }
 
-
-/* =========================================================
-   CHART PLACEHOLDER
-   ========================================================= */
-
-.chartPlaceholder {
-  height: 235px;
-
-  position: relative;
-
-  border-top: 1px solid rgba(255,255,255,.04);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.dashboardFooter {
-  width: min(1280px, 100%);
-
-  margin: 28px auto 0;
-
-  padding-top: 18px;
-
-  border-top: 1px solid rgba(255,255,255,.08);
-
-  display: flex;
-
-  justify-content: space-between;
-
-  font-size: 8px;
-
+.visualPeriod {
+  font-size: 12px;
   font-weight: 600;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   color: #55555d;
 }
 
-.aiEconomy {
-  min-height: calc(100vh - 80px);
-  padding-top: 80px;
-  box-sizing: border-box;
+
+/* =========================================================
+   PLACEHOLDERS
+   ========================================================= */
+
+.chartPlaceholder {
+  height: 220px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chartPlaceholderLarge {
+  height: 190px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chartPlaceholder span,
+.chartPlaceholderLarge span {
+  position: absolute;
+
+  inset: 0;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
-}
-.dashboardHeader {
-  width: min(900px, 90%);
-  text-align: center;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #333338;
 }
 
-.comingSoon {
-  min-height: calc(100vh - 80px);
+
+/* =========================================================
+   PEOPLE — GLOBAL AI ADHERENCE
+   ========================================================= */
+
+.peopleChart {
   width: 100%;
+
+  height: 285px;
+
+  margin-top: 8px;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   PEOPLE CHART MAIN
+   ========================================================= */
+
+.peopleChartMain {
+  width: 100%;
+
+  height: 220px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   PEOPLE Y AXIS — ISOLATED
+   ========================================================= */
+
+.peopleChartMain > .peopleYAxis {
+  width: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  align-self: stretch;
+
+  padding-right: 8px;
+
+  box-sizing: border-box;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: #66666e;
+
+  text-align: right;
+
+  position: relative;
+
+  z-index: 10;
+
+  overflow: visible;
+}
+
+.peopleChartMain > .peopleYAxis span {
+  display: block;
+
+  flex: 0 0 auto;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PEOPLE PLOT
+   ========================================================= */
+
+.peoplePlot {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  height: 220px;
+
+  overflow: visible;
+}
+.peopleDifferenceHighlight {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  z-index: 10;
+  pointer-events: none;
+}
+
+.peopleDifferenceBullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #9BE7B1;
+
+  box-shadow:
+    0 0 8px rgba(185, 138, 255, 0.8),
+    0 0 18px rgba(185, 138, 255, 0.35);
+
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+.peopleDifferenceHighlight strong {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: #9BE7B1;
+  letter-spacing: -0.3px;
+}
+
+.peopleDifferenceHighlight span {
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #f5f5f5;
+  text-transform: uppercase;
+}
+
+.peopleDifferenceHighlight small {
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #66666e;
+}
+
+.peopleDifferenceValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PEOPLE GRID LINES
+   ========================================================= */
+
+.peopleGridLine {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   PEOPLE SVG
+   ========================================================= */
+
+.peopleSvg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  display: block;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PEOPLE LINE GLOW
+   ========================================================= */
+
+.peopleLineGlow {
+  fill: none;
+
+  stroke: #b98aff;
+
+  stroke-width: 9;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  opacity: 0.20;
+
+  filter: url(#peoplePurpleGlow);
+}
+
+
+/* =========================================================
+   PEOPLE MAIN LINE
+   ========================================================= */
+
+.peopleLine {
+  fill: none;
+
+  stroke: #f5f5f5;
+
+  stroke-width: 2.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   PEOPLE AREA
+   ========================================================= */
+
+.peopleArea {
+  fill: url(#peopleAreaGradient);
+}
+
+
+/* =========================================================
+   PEOPLE STEMS
+   ========================================================= */
+
+.peopleStem {
+  stroke: rgba(245, 245, 245, 0.14);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 2 5;
+}
+
+
+/* =========================================================
+   PEOPLE POINTS
+   ========================================================= */
+
+.peoplePoint {
+  fill: #f5f5f5;
+}
+
+.peoplePointGlow {
+  fill: none;
+
+  stroke: rgba(185, 138, 255, 0.28);
+
+  stroke-width: 1;
+
+  filter: url(#peoplePurpleGlow);
+}
+
+
+/* =========================================================
+   PEOPLE POINT VALUES
+   ========================================================= */
+
+.peoplePointValue {
+  fill: #f5f5f5;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0;
+
+  text-anchor: middle;
+
+  paint-order: stroke;
+
+  stroke: rgba(5, 5, 5, 0.94);
+
+  stroke-width: 3px;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   PEOPLE X AXIS
+   ========================================================= */
+
+.peopleXAxis {
+  position: relative;
+
+  width: 100%;
+  height: 22px;
+
+  margin-top: 6px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  /*
+   * O SVG usa:
+   * peopleXPadding = 65
+   * viewBox = 1000
+   *
+   * Portanto:
+   * 65 / 1000 = 6.5%
+   */
+  padding-left: 9.5%;
+  padding-right: 20%;
+
+  box-sizing: border-box;
+}
+
+.peopleXAxis span {
+  display: block;
+
+  font-size: 10px;
+  line-height: 1;
+
+  color: rgba(245, 245, 245, 0.48);
+
+  font-weight: 500;
+  letter-spacing: 0.04em;
+
+  white-space: nowrap;
+}
+
+.peopleXAxis span:first-child {
+  text-align: left;
+}
+
+.peopleXAxis span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   PEOPLE GROWTH / INDICATOR
+   ========================================================= */
+
+.peopleGrowthHighlight {
+  width: 108px;
+
+  flex-shrink: 0;
+
+  height: 100%;
+
+  box-sizing: border-box;
+
+  margin-left: 18px;
+
+  padding-left: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
   justify-content: center;
 
-  text-align: center;
+  position: relative;
+
+  border-left: 1px solid rgba(185, 138, 255, 0.18);
+
+  z-index: 20;
+}
+
+.peopleGrowthHighlight::before {
+  content: "";
+
+  position: absolute;
+
+  left: -1px;
+
+  top: 42%;
+
+  width: 18px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(185, 138, 255, 0.55),
+    transparent
+  );
+}
+
+.peopleGrowthBullet {
+  position: absolute;
+
+  left: -4px;
+
+  top: calc(42% - 3px);
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #b98aff;
+
+  box-shadow:
+    0 0 0 3px rgba(185, 138, 255, 0.08),
+    0 0 12px rgba(185, 138, 255, 0.65);
+}
+
+.peopleGrowthHighlight strong {
+  display: block;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+
+  color: #9BE7B1;
+}
+
+.peopleGrowthHighlight span {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #85858d;
+}
+
+.peopleGrowthHighlight small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+
+  color: #55555d;
+}
+
+
+/* =========================================================
+   PEOPLE SOURCE
+   ========================================================= */
+
+.peopleSource {
+  margin-left: 48px;
+
+  margin-top: 13px;
+
+  padding-top: 8px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.5;
+
+  color: #55555d;
+}
+
+
+/* =========================================================
+   MARKET CHART
+   ========================================================= */
+
+.marketChart {
+  width: 100%;
+  height: 285px;
+
+  margin-top: 8px;
+
+  position: relative;
+}
+
+.marketChartMain {
+  width: 100%;
+  height: 220px;
+
+  display: flex;
+  align-items: stretch;
+
+  position: relative;
+}
+
+.marketYAxis {
+  width: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-right: 8px;
+
   box-sizing: border-box;
-  padding: 80px 24px 40px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  color: #66666e;
+
+  text-align: right;
 }
 
-.comingSoon .dashboardLabel {
+.marketPlot {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  height: 220px;
+
+  overflow: visible;
+}
+
+.gridLine {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.marketSvg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
   display: block;
-  margin-bottom: 24px;
+
+  z-index: 5;
+
+  pointer-events: none;
 }
 
-.comingSoon h1 {
+.marketActualLabel {
+  position: absolute;
+
+  top: 8px;
+  left: 4%;
+
+  z-index: 8;
+
+  padding: 7px 12px;
+
+  border-left: 2px solid rgba(245, 245, 245, 0.55);
+
+  background: rgba(5, 5, 5, 0.82);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.6px;
+
+  color: #a7a7ae;
+
+  white-space: nowrap;
+}
+
+.marketForecastLabel {
+  position: absolute;
+
+  top: 8px;
+  left: 55%;
+
+  z-index: 8;
+
+  padding: 7px 12px;
+
+  border-left: 2px solid rgba(185, 138, 255, 0.7);
+
+  background: rgba(5, 5, 5, 0.82);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.6px;
+
+  color: #b98aff;
+
+  white-space: nowrap;
+}
+
+.forecastDivider {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  border-left: 1px dashed rgba(185, 138, 255, 0.35);
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.marketPointValue {
+  fill: #f5f5f5;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0;
+
+  text-anchor: middle;
+
+  paint-order: stroke;
+
+  stroke: rgba(5, 5, 5, 0.94);
+
+  stroke-width: 3px;
+
+  stroke-linejoin: round;
+}
+
+.forecastValue {
+  fill: #b98aff;
+}
+
+.marketGrowthHighlight {
+  width: 108px;
+  flex-shrink: 0;
+
+  height: 100%;
+
+  box-sizing: border-box;
+
+  margin-left: 18px;
+
+  padding-left: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  position: relative;
+
+  border-left: 1px solid rgba(185, 138, 255, 0.18);
+
+  z-index: 20;
+}
+
+.marketGrowthHighlight::before {
+  content: "";
+
+  position: absolute;
+
+  left: -1px;
+  top: 42%;
+
+  width: 18px;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(185, 138, 255, 0.55),
+    transparent
+  );
+}
+
+.growthBullet {
+  position: absolute;
+
+  left: -4px;
+  top: calc(42% - 3px);
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #b98aff;
+
+  box-shadow:
+    0 0 0 3px rgba(185, 138, 255, 0.08),
+    0 0 12px rgba(185, 138, 255, 0.65);
+}
+
+.marketGrowthHighlight strong {
+  display: block;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+
+  color: #9BE7B1;
+}
+
+.marketGrowthHighlight span {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #85858d;
+}
+
+.marketGrowthHighlight small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+
+  color: #55555d;
+}
+
+.marketXAxis {
+  position: relative;
+
+  margin-left: 48px;
+  margin-right: 126px;
+
+  height: 20px;
+
+  padding-top: 8px;
+
+  box-sizing: border-box;
+}
+
+.marketXAxis span {
+  position: absolute;
+
+  top: 8px;
+
+  transform: translateX(-50%);
+
+  width: 40px;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #66666e;
+
+  white-space: nowrap;
+}
+
+.marketSource {
+  margin-left: 48px;
+
+  margin-top: 13px;
+
+  padding-top: 8px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.5;
+
+  color: #55555d;
+}
+
+
+/* =========================================================
+   COUNTRY INVESTMENT
+   ========================================================= */
+
+.countryInvestmentChart {
+  width: 100%;
+  height: 285px;
+
+  margin-top: 8px;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.countryChartHeader {
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  box-sizing: border-box;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+
+  color: #66666e;
+}
+
+.countryChartHeader span:last-child {
+  font-size: 9px;
+
+  letter-spacing: 1.2px;
+
+  color: #4f4f56;
+}
+
+.countryBars {
+  width: 100%;
+
+  height: 195px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.countryRow {
+  width: 100%;
+
+  height: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    22px
+    68px
+    minmax(0, 1fr)
+    58px;
+
+  align-items: center;
+
+  column-gap: 7px;
+
+  box-sizing: border-box;
+}
+
+.countryRank {
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  color: #3f3f46;
+
+  text-align: right;
+}
+
+.countryName {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.2px;
+
+  color: #85858d;
+}
+
+.countryBarTrack {
+  width: 100%;
+  height: 6px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  overflow: hidden;
+
+  border-radius: 1px;
+}
+
+.countryBar {
+  height: 100%;
+
+  background: rgba(185, 138, 255, 0.48);
+
+  border-radius: 1px;
+
+  transition: width 0.3s ease;
+}
+
+.countryBarHighlight {
+  background: #b98aff;
+
+  box-shadow:
+    0 0 10px rgba(185, 138, 255, 0.35);
+}
+
+.countryValue {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.1px;
+
+  color: #85858d;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.countryRow:first-child .countryValue {
+  color: #b98aff;
+}
+
+.countryChartInsight {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 25px;
+
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 10px;
+
+  border-left: 1px solid rgba(185, 138, 255, 0.20);
+
+  box-sizing: border-box;
+}
+
+.countryInsightBullet {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+
+  background: #9BE7B1;
+
+  box-shadow:
+    0 0 8px rgba(185, 138, 255, 0.6);
+}
+
+.countryChartInsight strong {
+  margin-right: 8px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #9BE7B1;
+
+  white-space: nowrap;
+}
+
+.countryChartInsight span {
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: #9BE7B1;
+
+  white-space: nowrap;
+}
+
+.countryChartSource {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  padding-top: 6px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.35px;
+
+  line-height: 1.3;
+
+  color: #4f4f56;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1300px) {
+
+  .aiEconomy {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .dashboardFrame {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .marketGrowthHighlight,
+  .peopleGrowthHighlight {
+    width: 100px;
+
+    margin-left: 14px;
+
+    padding-left: 14px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .aiEconomy {
+    padding: 100px 20px 32px;
+  }
+
+  .dashboardFrame {
+    padding: 28px 16px 18px;
+  }
+
+  .mainGrid,
+  .secondaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .peopleGrid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 12px;
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpiCard:nth-child(2n) {
+    border-right: none;
+  }
+
+  .marketChartMain,
+  .peopleChartMain {
+    height: 240px;
+  }
+
+  .marketPlot {
+    height: 240px;
+  }
+
+  /* PEOPLE Y AXIS — ONLY PEOPLE */
+  .peopleChartMain > .peopleYAxis {
+    width: 54px;
+    flex-basis: 54px;
+
+    font-size: 10px;
+  }
+
+  .marketYAxis {
+    width: 54px;
+    font-size: 10px;
+  }
+
+  .marketGrowthHighlight,
+  .peopleGrowthHighlight {
+    width: 115px;
+  }
+
+  .marketXAxis,
+  .peopleXAxis {
+    margin-left: 54px;
+    margin-right: 125px;
+  }
+
+  .marketSource,
+  .peopleSource {
+    margin-left: 54px;
+  }
+
+  .countryInvestmentChart {
+    height: 250px;
+  }
+
+  .countryBars {
+    height: 195px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .aiEconomy {
+    padding: 80px 16px 30px;
+  }
+
+  .dashboardFrame {
+    padding: 24px 14px 18px;
+  }
+
+  .dashboardHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .mainGrid,
+  .secondaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .peopleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* =======================================================
+     PEOPLE
+     ======================================================= */
+
+  .peopleChart {
+    height: 340px;
+  }
+
+  .peopleChartMain {
+    height: 240px;
+  }
+
+  /* PEOPLE Y AXIS — ONLY PEOPLE */
+  .peopleChartMain > .peopleYAxis {
+    width: 52px;
+    flex-basis: 52px;
+
+    font-size: 10px;
+  }
+
+  .peoplePlot {
+    height: 240px;
+  }
+
+  .peopleXAxis {
+    margin-left: 52px;
+
+    margin-right: 0;
+
+    padding-right: 0;
+  }
+
+  .peopleSource {
+    margin-left: 52px;
+
+    margin-top: 58px;
+
+    font-size: 8px;
+  }
+
+  .peopleGrowthHighlight {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -78px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding-left: 0;
+
+    border-left: none;
+
+    justify-content: flex-start;
+  }
+
+  .peopleGrowthHighlight::before,
+  .peopleGrowthBullet {
+    display: none;
+  }
+
+
+  /* =======================================================
+     MARKET
+     ======================================================= */
+
+  .marketChart {
+    height: 340px;
+  }
+
+  .marketChartMain {
+    height: 240px;
+  }
+
+  .marketPlot {
+    height: 240px;
+  }
+
+  .marketYAxis {
+    width: 52px;
+
+    font-size: 10px;
+  }
+
+  .marketXAxis {
+    margin-left: 52px;
+
+    padding-right: 0;
+  }
+
+  .marketSource {
+    margin-left: 52px;
+
+    margin-top: 58px;
+
+    font-size: 8px;
+  }
+
+  .marketGrowthHighlight {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -78px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding-left: 0;
+
+    border-left: none;
+
+    justify-content: flex-start;
+  }
+
+  .marketGrowthHighlight::before,
+  .growthBullet {
+    display: none;
+  }
+
+
+  /* =======================================================
+     COUNTRY
+     ======================================================= */
+
+  .countryInvestmentChart {
+    height: 340px;
+
+    margin-top: 8px;
+  }
+
+  .countryChartHeader {
+    margin-bottom: 10px;
+  }
+
+  .countryBars {
+    height: 230px;
+  }
+
+  .countryRow {
+    grid-template-columns:
+      22px
+      72px
+      minmax(0, 1fr)
+      62px;
+
+    height: 16px;
+
+    column-gap: 6px;
+  }
+
+  .countryName {
+    font-size: 8px;
+  }
+
+  .countryValue {
+    font-size: 8px;
+  }
+
+  .countryChartInsight {
+    bottom: 29px;
+  }
+
+  .countryChartSource {
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .aiEconomy {
+    width: 100%;
+
+    padding: 70px 8px 30px;
+  }
+
+  .dashboardFrame {
+    width: 100%;
+
+    padding: 20px 10px 18px;
+
+    border-radius: 7px;
+  }
+
+
+  /* =======================================================
+     HEADER
+     ======================================================= */
+
+  .dashboardHeader {
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+  }
+
+  .dashboardHeader h1 {
+    font-size: 22px;
+  }
+
+  .headerContext {
+    font-size: 8px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =======================================================
+     KPI
+     ======================================================= */
+
+  .kpiGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kpiCard {
+    min-height: 96px;
+
+    padding: 14px 12px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  .kpiCard:nth-child(2n) {
+    border-right: none;
+  }
+
+  .kpiCard:last-child {
+    grid-column: 1 / 3;
+
+    width: 50%;
+
+    justify-self: center;
+
+    border-right: none;
+  }
+
+  .kpiValue {
+    font-size: 23px;
+  }
+
+  .kpiLabel {
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .kpiMeta {
+    font-size: 7px;
+  }
+
+
+  /* =======================================================
+     CARDS
+     ======================================================= */
+
+  .mainGrid,
+  .secondaryGrid,
+  .peopleGrid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 12px;
+  }
+
+  .visualCard,
+  .fullWidthCard {
+    padding: 15px 12px;
+  }
+
+  .visualHeader {
+    margin-bottom: 10px;
+
+    padding-bottom: 10px;
+  }
+
+  .visualEyebrow {
+    font-size: 8px;
+  }
+
+  .visualHeader h2 {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+  }
+
+  .visualPeriod {
+    font-size: 8px;
+  }
+
+
+  /* =======================================================
+     PEOPLE CHART
+     ======================================================= */
+
+  .peopleChart {
+    height: 340px;
+
+    width: 100%;
+
+    overflow: visible;
+  }
+
+  .peopleChartMain {
+    width: 100%;
+
+    height: 235px;
+
+    display: flex;
+  }
+
+  /* PEOPLE Y AXIS — ONLY PEOPLE */
+  .peopleChartMain > .peopleYAxis {
+    width: 40px;
+    flex-basis: 40px;
+
+    padding-right: 5px;
+
+    font-size: 8px;
+  }
+
+  .peoplePlot {
+    height: 235px;
+
+    min-width: 0;
+
+    flex: 1;
+  }
+
+  .peoplePointValue {
+    font-size: 7px;
+
+    stroke-width: 2.5px;
+  }
+
+  .peopleXAxis {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    margin-right: 0;
+
+    font-size: 4px;
+
+    letter-spacing: 0.2px;
+  }
+
+  .peopleXAxis span {
+    font-size: 7px;
+  }
+
+  .peopleSource {
+    width: calc(100% - 40px);
+
+    margin-left: 40px;
+
+    margin-top: 58px;
+
+    padding-top: 8px;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+  }
+
+  .peopleGrowthHighlight {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -105px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+  }
+
+  .peopleGrowthHighlight::before,
+  .peopleGrowthBullet {
+    display: none;
+  }
+
+  .peopleGrowthHighlight strong {
+    font-size: 12px;
+  }
+
+  .peopleGrowthHighlight span {
+    font-size: 5px;
+  }
+
+  .peopleGrowthHighlight small {
+    font-size: 8px;
+  }
+
+
+  /* =======================================================
+     MARKET CHART
+     ======================================================= */
+
+  .marketChart {
+    height: 340px;
+
+    width: 100%;
+
+    overflow: visible;
+  }
+
+  .marketChartMain {
+    width: 100%;
+
+    height: 235px;
+
+    display: flex;
+  }
+
+  .marketYAxis {
+    width: 40px;
+
+    padding-right: 5px;
+
+    font-size: 8px;
+  }
+
+  .marketPlot {
+    height: 235px;
+
+    min-width: 0;
+
+    flex: 1;
+  }
+
+  .marketActualLabel,
+  .marketForecastLabel {
+    top: 6px;
+
+    padding: 5px 7px;
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+  }
+
+  .marketActualLabel {
+    left: 4px;
+  }
+
+  .marketForecastLabel {
+    left: 49%;
+  }
+
+  .marketPointValue {
+    font-size: 7px;
+
+    stroke-width: 2.5px;
+  }
+
+  .marketXAxis {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    font-size: 4px;
+
+    letter-spacing: 0.2px;
+  }
+
+  .marketXAxis span {
+    font-size: 7px;
+  }
+
+  .marketSource {
+    width: calc(100% - 40px);
+
+    margin-left: 40px;
+
+    margin-top: 58px;
+
+    padding-top: 8px;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+  }
+
+  .marketGrowthHighlight {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -105px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+  }
+
+  .marketGrowthHighlight::before,
+  .growthBullet {
+    display: none;
+  }
+
+  .marketGrowthHighlight strong {
+    font-size: 12px;
+  }
+
+  .marketGrowthHighlight span {
+    font-size: 5px;
+  }
+
+  .marketGrowthHighlight small {
+    font-size: 5px;
+  }
+
+
+  /* =======================================================
+     COUNTRY INVESTMENT
+     ======================================================= */
+
+  .countryInvestmentChart {
+    height: 340px;
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    overflow: hidden;
+  }
+
+  .countryChartHeader {
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+  .countryChartHeader span:last-child {
+    font-size: 6px;
+  }
+
+  .countryBars {
+    height: 230px;
+
+    width: 100%;
+  }
+
+  .countryRow {
+    height: 16px;
+
+    grid-template-columns:
+      18px
+      62px
+      minmax(0, 1fr)
+      54px;
+
+    column-gap: 5px;
+  }
+
+  .countryRank {
+    font-size: 6px;
+  }
+
+  .countryName {
+    font-size: 7px;
+
+    letter-spacing: 0;
+  }
+
+  .countryBarTrack {
+    height: 4px;
+  }
+
+  .countryValue {
+    font-size: 7px;
+
+    letter-spacing: 0;
+  }
+
+  .countryChartInsight {
+    left: 0;
+    right: 0;
+
+    bottom: 30px;
+
+    height: 22px;
+
+    padding-left: 7px;
+  }
+
+  .countryInsightBullet {
+    width: 4px;
+    height: 4px;
+
+    margin-right: 6px;
+  }
+
+  .countryChartInsight strong {
+    font-size: 7px;
+
+    margin-right: 6px;
+  }
+
+  .countryChartInsight span {
+    font-size: 6px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .countryChartSource {
+    font-size: 6px;
+
+    padding-top: 6px;
+  }
+
+
+  /* =======================================================
+     PLACEHOLDERS
+     ======================================================= */
+
+  .chartPlaceholder {
+    height: 190px;
+  }
+
+  .chartPlaceholderLarge {
+    height: 170px;
+  }
+
+
+  /* =======================================================
+     TABLE
+     ======================================================= */
+
+  .tablePlaceholder {
+    overflow-x: auto;
+
+    min-width: 580px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .aiEconomy {
+    padding-left: 5px;
+
+    padding-right: 5px;
+  }
+
+  .dashboardFrame {
+    padding-left: 8px;
+
+    padding-right: 8px;
+  }
+
+
+  /* =======================================================
+     KPI
+     ======================================================= */
+
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpiCard {
+    min-height: 82px;
+
+    border-right: none !important;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .kpiCard:last-child {
+    width: 70%;
+
+    margin: 0 auto;
+
+    border-right: none !important;
+
+    border-left: none;
+  }
+
+
+  /* =======================================================
+     PEOPLE
+     ======================================================= */
+
+  .peopleYAxis {
+    width: 36px;
+
+    font-size: 7px;
+  }
+
+  .peopleChartMain > .peopleYAxis {
+    width: 36px;
+    flex-basis: 36px;
+
+    font-size: 7px;
+  }
+
+  .peoplePlot {
+    height: 225px;
+  }
+
+  .peopleChartMain {
+    height: 225px;
+  }
+
+  .peopleXAxis {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    font-size: 7px;
+  }
+
+  .peopleXAxis span {
+    font-size: 6px;
+  }
+
+  .peopleSource {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    font-size: 6px;
+  }
+
+  .peoplePointValue {
+    font-size: 6.5px;
+  }
+
+
+  /* =======================================================
+     MARKET
+     ======================================================= */
+
+  .marketYAxis {
+    width: 36px;
+
+    font-size: 7px;
+  }
+
+  .marketPlot {
+    height: 225px;
+  }
+
+  .marketChartMain {
+    height: 225px;
+  }
+
+  .marketXAxis {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    font-size: 7px;
+  }
+
+  .marketXAxis span {
+    font-size: 6px;
+  }
+
+  .marketSource {
+    width: calc(100% - 36px);
+
+    margin-left: 36px;
+
+    font-size: 6px;
+  }
+
+  .marketPointValue {
+    font-size: 6.5px;
+  }
+
+  .marketActualLabel,
+  .marketForecastLabel {
+    font-size: 5.5px;
+  }
+
+
+  /* =======================================================
+     COUNTRY
+     ======================================================= */
+
+  .countryInvestmentChart {
+    height: 325px;
+  }
+
+  .countryBars {
+    height: 215px;
+  }
+
+  .countryRow {
+    grid-template-columns:
+      16px
+      58px
+      minmax(0, 1fr)
+      50px;
+
+    column-gap: 4px;
+  }
+
+  .countryRank {
+    font-size: 5.5px;
+  }
+
+  .countryName {
+    font-size: 6.5px;
+  }
+
+  .countryValue {
+    font-size: 6.5px;
+  }
+
+  .countryChartInsight strong {
+    font-size: 6.5px;
+  }
+
+  .countryChartInsight span {
+    font-size: 5.5px;
+  }
+
+  .countryChartSource {
+    font-size: 5.5px;
+  }
+}
+.peoplePointValue {
+  font-size: 12px;
+}
+
+.peopleDifferenceHighlight strong {
+  font-size: 12px;
+}
+
+.peopleDifferenceHighlight span {
+  font-size: 5px;
+}
+
+.countryAdoptionChart {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.countryAdoptionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8px;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #66666e;
+}
+
+.countryAdoptionBars {
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding-right: 8px;
+}
+
+.countryAdoptionBars::-webkit-scrollbar {
+  width: 4px;
+}
+
+.countryAdoptionBars::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.countryAdoptionBars::-webkit-scrollbar-thumb {
+  background: rgba(185, 138, 255, 0.35);
+  border-radius: 10px;
+}
+
+.countryAdoptionBars::-webkit-scrollbar-thumb:hover {
+  background: rgba(185, 138, 255, 0.55);
+}
+
+.countryAdoptionRow {
+  display: grid;
+
+  grid-template-columns:
+    24px
+    86px
+    minmax(0, 1fr)
+    48px;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 27px;
+}
+
+.countryAdoptionFlag {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.countryAdoptionName {
+  font-size: 10px;
+  font-weight: 600;
+  color: #cfcfd6;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.countryAdoptionTrack {
+  height: 5px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.countryAdoptionBar {
+  height: 100%;
+
+  background: #b98aff;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 8px rgba(185, 138, 255, 0.28);
+}
+
+.countryAdoptionValue {
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #f5f5f5;
+
+  text-align: right;
+  white-space: nowrap;
+}
+
+.countryAdoptionSource {
+  margin-top: 8px;
+
+  font-size: 8px;
+  letter-spacing: 0.4px;
+
+  color: #55555d;
+}
+
+.countryAdoptionInsight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+.countryAdoptionInsightBullet {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #9be7b1;
+
+  box-shadow:
+    0 0 8px rgba(155, 231, 177, 0.7);
+}
+
+.countryAdoptionInsight strong {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #9be7b1;
+}
+
+.countryAdoptionInsight span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+
+  color: #f5f5f5;
+}
+
+.countryAdoptionInsight small {
+  margin-left: auto;
+
+  font-size: 10px;
+  letter-spacing: 0.6px;
+
+  color: #66666e;
+}
+
+/* =========================================================
+   WORK — SCATTER CHART
+   ========================================================= */
+
+.workScatterChart {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.workScatterHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.workScatterHeader span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #f5f5f5;
+  white-space: nowrap;
+}
+
+.workScatterHeader span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   WORK — MAIN CHART
+   ========================================================= */
+
+.workScatterMain {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+}
+
+.workScatterYAxis {
+  width: 42px;
+  height: 280px;
+  flex: 0 0 42px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.workScatterYAxis span {
+  display: block;
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(245, 245, 245, 0.55);
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   WORK — PLOT
+   ========================================================= */
+
+.workScatterPlot {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 280px;
+  overflow: visible;
+}
+
+.workScatterSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+
+/* =========================================================
+   WORK — X AXIS
+   ========================================================= */
+
+.workScatterXAxis {
+  width: calc(100% - 42px);
+  margin-left: 42px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 8px;
+}
+
+.workScatterXAxis span {
+  display: block;
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(245, 245, 245, 0.55);
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   WORK — TREND LINE
+   ========================================================= */
+
+.workTrendLine {
+  position: absolute;
+  left: 55px;
+  right: 55px;
+  top: 50%;
+  height: 2px;
+
+  background: rgba(185, 138, 255, 0.22);
+
+  transform: rotate(-4deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WORK — POINT LABELS
+   ========================================================= */
+
+.workScatterLabel {
+  fill: #f5f5f5;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   WORK — INSIGHT
+   ========================================================= */
+
+.workScatterInsight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 20px;
+
+  min-height: 28px;
+}
+
+.workScatterInsightBullet {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+  background: #b98aff;
+
+  box-shadow:
+    0 0 8px rgba(185, 138, 255, 0.7);
+}
+
+.workScatterInsight strong {
+  display: block;
+  color: #f5f5f5;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.workScatterInsight span {
+  display: block;
+  color: rgba(245, 245, 245, 0.55);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   WORK — SOURCE
+   ========================================================= */
+
+.workScatterSource {
+  margin-top: 12px;
+
+  color: rgba(245, 245, 245, 0.38);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+/* =========================================================
+   WORK — DATA LABELS
+   ========================================================= */
+
+.workDataLabel,
+.workDataLabelHighlight {
+  pointer-events: none;
+}
+
+/* Nome do país */
+/* Nome do país */
+.workScatterCountry {
+  fill: #f5f5f5 !important;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  paint-order: stroke;
+  stroke: rgba(5, 5, 5, 0.95);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.workScatterValue {
+  fill: rgba(245, 245, 245, 0.72) !important;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+  paint-order: normal;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+/* País destacado */
+.workDataLabelHighlight .workScatterCountry {
+  fill: #ffffff;
+  font-weight: 800;
+}
+
+/* Valor destacado */
+.workDataLabelHighlight .workScatterValue {
+  fill: #b98aff !important;
+  font-weight: 700;
+
+  stroke: none !important;
+  stroke-width: 0 !important;
+  paint-order: normal;
+}
+
+/* =========================================================
+   PEOPLE — HOW AI IS USED
+========================================================= */
+
+.aiUseChart {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 12px;
+  box-sizing: border-box;
+}
+
+.aiUseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(245, 245, 245, 0.45);
+}
+
+.aiUseBars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+  justify-content: center;
+}
+
+.aiUseRow {
+  display: grid;
+  grid-template-columns: 150px 1fr 48px;
+  align-items: center;
+  gap: 14px;
+}
+
+.aiUseLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.72);
+  white-space: nowrap;
+}
+
+.aiUseTrack {
+  position: relative;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(245, 245, 245, 0.07);
+  overflow: hidden;
+}
+
+.aiUseBar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 138, 255, 0.55),
+    #b98aff
+  );
+  box-shadow:
+    0 0 12px rgba(185, 138, 255, 0.18);
+  transition: width 0.4s ease;
+}
+
+.aiUseValue {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+
+.aiUseInsight {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(245, 245, 245, 0.08);
+}
+
+.aiUseInsightBullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b98aff;
+  box-shadow: 0 0 10px rgba(185, 138, 255, 0.55);
+  flex-shrink: 0;
+}
+
+.aiUseInsight strong {
+  font-size: 11px;
+  color: #f5f5f5;
+  letter-spacing: 0.04em;
+}
+
+.aiUseInsight span {
+  font-size: 9px;
+  color: rgba(245, 245, 245, 0.42);
+  letter-spacing: 0.06em;
+}
+
+.aiUseSource {
+  margin-top: 12px;
+  font-size: 9px;
+  line-height: 1.4;
+  color: rgba(245, 245, 245, 0.28);
+  letter-spacing: 0.03em;
+}
+
+.aiUseChart {
+  margin-top: 28px;
+  padding: 0 40px 20px;
+}
+
+.aiUseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+  color: rgba(245, 245, 245, 0.42);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.aiUseSplit {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 42px;
+  margin-bottom: 38px;
+}
+
+.aiUseSplitItem {
+  min-width: 0;
+}
+
+.aiUseSplitTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0px;
+}
+
+.aiUseSplitTop span {
+  color: rgba(245, 245, 245, 0.72);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.aiUseSplitTop strong {
+  color: #f5f5f5;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.aiUseTrack {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(245, 245, 245, 0.08);
+  overflow: hidden;
+}
+
+.aiUseBar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #7656a8,
+    #b98aff
+  );
+}
+
+.aiUseBarSecondary {
+  opacity: 0.62;
+}
+
+.aiUseSplitItem small {
+  display: block;
+  margin-top: 9px;
+  color: rgba(245, 245, 245, 0.32);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.aiUseContext {
+  padding-top: 24px;
+  border-top: 1px solid rgba(245, 245, 245, 0.10);
+}
+
+.aiUseContextTitle {
+  margin-bottom: 20px;
+  color: rgba(245, 245, 245, 0.38);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+}
+
+.aiUseContextGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.aiUseContextItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid rgba(245, 245, 245, 0.07);
+  background: rgba(245, 245, 245, 0.015);
+}
+
+.aiUseContextItem {
+  text-align: center;
+}
+
+.aiUseContextItem span {
+  color: #b98aff;
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+}
+
+.aiUseContextItem strong {
+  color: rgba(245, 245, 245, 0.72);
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.3;
+  display: block;
+}
+
+.aiUseInsight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(245, 245, 245, 0.10);
+}
+
+.aiUseInsightBullet {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #b98aff;
+  box-shadow: 0 0 12px rgba(185, 138, 255, 0.55);
+}
+
+.aiUseInsight strong {
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.aiUseInsight span {
+  color: rgba(245, 245, 245, 0.38);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.aiUseSource {
+  margin-top: 10px;
+  color: rgba(245, 245, 245, 0.25);
+  font-size: 9px;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   MARKETS — GEN AI USE BY INDUSTRY
+========================================================= */
+
+.industryChart {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.industryGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.industryCard {
+  min-width: 0;
+  min-height: 112px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(245, 245, 245, 0.07);
+  border-radius: 8px;
+
+  background: rgba(245, 245, 245, 0.025);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.industryCardHighlight {
+  border-color: rgba(185, 138, 255, 0.25);
+  background: rgba(185, 138, 255, 0.045);
+}
+
+.industryCardTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.industryRank {
+  flex-shrink: 0;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(253, 253, 253, 0.28);
+}
+
+.industryName {
+  min-width: 0;
+
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+
+  color: rgba(245, 245, 245, 0.55);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.industryValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.industryValue {
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 500;
+  letter-spacing: -0.045em;
+
+  color: #f5f5f5;
+}
+
+.industryCardHighlight .industryValue {
+  color: #b98aff;
+}
+
+.industryPercent {
+  font-size: 12px;
+  color: #f5f5f5;
+}
+
+.industryTrack {
+  width: 100%;
+  height: 6px;
+  margin-top: 10px;
+
+   background: rgba(245, 245, 245, 0.07);
+
+  overflow: hidden;
+}
+.industryBar {
+  height: 100%;
+
+  background: #b98aff;
+
+  border-radius: 999px;
+
+  transition: width 0.3s ease;
+}
+
+
+
+.industryInsight {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 18px;
+}
+
+.industryInsightBullet {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #b98aff;
+}
+
+.industryInsight strong {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #f5f5f5;
+}
+
+.industryInsight span {
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.42);
+}
+
+.industrySource {
+  margin-top: 10px;
+  padding-top: 9px;
+
+  border-top: 1px solid rgba(245, 245, 245, 0.06);
+
+  font-size: 9px;
+  line-height: 1.4;
+
+  color: rgba(245, 245, 245, 0.3);
+}
+
+/* =========================================================
+   GLOBAL — KEY INSIGHTS
+========================================================= */
+
+.insightsSection {
+  width: 100%;
+  margin: 18px auto 0;
+}
+
+.insightsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  min-height: 38px;
+
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.insightsGrid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.insightCard {
+  position: relative;
+
+  box-sizing: border-box;
+
+  min-height: 190px;
+
+  padding: 20px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.012);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.insightCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(185, 138, 255, 0.75),
+    rgba(185, 138, 255, 0.08)
+  );
+
+  box-shadow:
+    0 0 14px rgba(185, 138, 255, 0.25);
+}
+
+.insightNumber {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  color: rgba(185, 138, 255, 0.65);
+}
+
+.insightValue {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  color: #b98aff;
+
+  text-shadow:
+    0 0 16px rgba(185, 138, 255, 0.22);
+}
+
+.insightCard h3 {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  line-height: 1.35;
+
+  font-weight: 600;
+
+  color: #f5f5f5;
+}
+
+.insightCard p {
   margin: 0;
+
+  max-width: 320px;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: rgba(245, 245, 245, 0.48);
 }
 
-.comingSoon p {
-  max-width: 600px;
-  margin: 24px auto;
+/* =========================================================
+   INSIGHTS — RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .insightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.comingSoon strong {
-  display: block;
-  margin-top: 32px;
+@media (max-width: 640px) {
+  .insightsSection {
+    margin-top: 14px;
+  }
+
+  .insightsHeader {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .insightsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .insightCard {
+    min-height: auto;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .insightNumber {
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+
+  .insightValue {
+    margin-bottom: 6px;
+    font-size: 27px;
+  }
+
+  .insightCard h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .insightCard p {
+    max-width: none;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   PEOPLE — RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .peopleGrid,
+  .secondaryGrid,
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .visualCard,
+  .fullWidthCard {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .peopleGrid .visualCard {
+    min-height: 0;
+  }
+
+}
+
+/* =========================================================
+   MOBILE — PEOPLE / AI USE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .peopleGrid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    margin-left: 0;
+    margin-right: 0;
+    gap: 14px;
+  }
+
+  .peopleGrid > .visualCard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* COMO A IA É UTILIZADA */
+
+  .aiUseChart {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .aiUseSplit {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .aiUseSplitItem {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .aiUseContext {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .aiUseContextGrid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aiUseContextItem {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .aiUseContextItem strong {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .aiUseInsight {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+}
+
+
+/* =========================================================
+   DASHBOARD FOOTER
+   ========================================================= */
+
+.dashboardFooter {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 28px;
+  padding: 18px 4px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(245, 245, 245, 0.45);
+}
+
+.footerBrand {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  color: rgba(245, 245, 245, 0.72);
+}
+
+.footerCenter {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-align: center;
+
+  color: rgba(245, 245, 245, 0.32);
+}
+
+.footerMeta {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+
+  color: rgba(185, 138, 255, 0.65);
+}
+
+/* =========================================================
+   BACK TO CASE STUDY
+   ========================================================= */
+
+.backToStudy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 18px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: rgba(245, 245, 245, 0.48);
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.backToStudy span {
+  font-size: 16px;
+  line-height: 1;
+  color: #b98aff;
+}
+
+.backToStudy:hover {
+  color: #f5f5f5;
+  transform: translateX(-3px);
 }
